@@ -43,7 +43,7 @@ layout - you can safely update without breaking your work
 
 Understood! Generate away:
 
-    $ rails g adminv:template
+    $ rails g adminv:layout
 
 Which will copy the template into you your `app/views/layouts`
 directory.
