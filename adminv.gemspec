@@ -6,13 +6,15 @@ Gem::Specification.new do |s|
   s.name        = "adminv"
   s.version     = Adminv::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Jordan Lewis", "Nicholas Bruning"]
+  s.email       = ["jordan@involved.com.au", "nicholas@bruning.com.au"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Adminv is an administrative layout for Rails, taking all the work out of making your app administration pretty.}
+  s.description = %q{Adminv is an administrative layout for Rails, which includes view helpers to make creating usable and pretty administrative consoles a snap.}
 
   s.rubyforge_project = "adminv"
+
+  s.add_dependency("rails", [">3.0.0"])
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

@@ -1,3 +1,5 @@
 module Adminv
-  # Your code goes here...
+  module Helpers
+    autoload :ViewHelper, 'menumatic/helpers/view_helper'
+  end
 end
