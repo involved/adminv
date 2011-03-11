@@ -1,0 +1,92 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<title><%= h( content_for?(:title) ? yield(:title) : "Welcome") %> | 1200kmsforkids Admin</title>
+	<%= stylesheet_link_tag "style", "adminv", "formtastic", "formtastic_changes" %>
+	<%= csrf_meta_tag %>
+	<%= render :partial => 'adminv/html_head' %>
+	<%= javascript_include_tag "libs/modernizr-1.6.min" %>
+  </head>
+  
+  <body>
+	<div id="fb-root"></div>
+    <div id="wrapper">	
+		<header>
+			<div id="top-bar">
+				<div class="container">
+					<div class="grid_12">
+						<%= link_to("Adminv", root_path, { :class => "logo" }) %>
+						<%= render :partial => 'adminv/user' %>
+					</div><!-- .grid_12 -->    
+				</div><!-- .container -->
+			</div><!-- #top-bar -->
+			<nav class="main">
+				<div class="container">
+					<div class="grid_12">
+						<%= render :partial => 'adminv/primary_navigation' %>
+					</div><!-- .grid_12 -->
+				</div><!-- .container -->
+			</nav>
+			<nav class="sub">
+				<div class="container">
+					<div class="grid_9">
+						<%= render :partial => 'adminv/secondary_navigation' %>
+					</div><!-- .grid_12 -->    
+				</div><!-- .container -->
+			</nav><!-- .sub -->
+		</header>
+		
+
+		<div id="main" class="container">
+			<% flash.each do |name, message| %>
+				<%= content_tag :div, :class => "grid_12" do %>
+					<%= content_tag :div, render(:partial => "adminv/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}" %>
+				<% end %>
+			<% end %>
+			<%= render :partial => "adminv/content" %>
+		</div><!-- #main.container -->
+
+		<footer>
+			<div class="container">
+				<div class="grid_12">
+					<%= render :partial => "adminv/footer" %>
+				</div>
+			</div>				
+		</footer>
+
+	</div><!-- #wrapper -->
+
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" %>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+
+	<!-- Core JS -->
+	<%= javascript_include_tag "rails", "plugins", "application", "adminv" %>
+
+	<!-- jQuery UI -->
+	<%= javascript_include_tag "jquery-ui" %>
+
+	<!-- Facebook -->
+	<script src="http://connect.facebook.net/en_US/all.js#appId=182482768444315&amp;xfbml=1"></script>
+	<%#= javascript_include_tag "http://static.ak.fbcdn.net/connect.php/js/FB.Share" %>
+
+	<!-- jQuery Plugins -->
+	<%#= javascript_include_tag "plugins/jquery.hoverIntent" %>
+	
+	<!--[if lt IE 7 ]>
+	  <script src="js/libs/dd_belatedpng.js"></script>
+	  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+	<![endif]-->
+
+	<%- if Rails.env == 'development' -%>
+		<!-- JS Profiling, Development only -->
+		<%= javascript_include_tag "profiling/yahoo-profiling.min", "profiling/config" %>
+		<!-- end profiling -->
+	<%- end -%>
+	
+	<%= render :partial => 'admin/javascripts' %>
+	</body>
+</html>

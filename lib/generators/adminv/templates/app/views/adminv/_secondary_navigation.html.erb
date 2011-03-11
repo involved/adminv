@@ -1,0 +1,7 @@
+<%- if defined?(Menumatic) -%>
+	<%= render :navigation => 'admin', :level => :secondary %>
+<%- else -%>
+	<ul>
+		<li></li>
+	</ul>
+<%- end -%>
