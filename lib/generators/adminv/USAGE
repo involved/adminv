@@ -1,0 +1,3 @@
+To add the Adminv assets and views to your Rails app, simple do:
+
+    rails generate adminv:views

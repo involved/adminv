@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jordan Lewis", "Nicholas Bruning"]
   s.email       = ["jordan@involved.com.au", "nicholas@bruning.com.au"]
-  s.homepage    = ""
+  s.homepage    = "http://github.com/jordan-lewis/adminv"
   s.summary     = %q{Adminv is an administrative layout for Rails, taking all the work out of making your app administration pretty.}
   s.description = %q{Adminv is an administrative layout for Rails, which includes view helpers to make creating usable and pretty administrative consoles a snap.}
 
