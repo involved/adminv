@@ -6,10 +6,10 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
 	<title><%= h( content_for?(:title) ? yield(:title) : "Welcome") %> | 1200kmsforkids Admin</title>
-	<%= stylesheet_link_tag "style", "adminv", "formtastic", "formtastic_changes" %>
+	<%= stylesheet_link_tag "adminv/style", "adminv/adminv", "adminv/formtastic", "adminv/formtastic_changes" %>
 	<%= csrf_meta_tag %>
 	<%= render :partial => 'adminv/html_head' %>
-	<%= javascript_include_tag "libs/modernizr-1.6.min" %>
+	<%= javascript_include_tag "adminv/modernizr-1.6.min" %>
   </head>
   
   <body>
@@ -64,10 +64,10 @@
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
 
 	<!-- Core JS -->
-	<%= javascript_include_tag "rails", "plugins", "application", "adminv" %>
+	<%= javascript_include_tag "adminv/rails", "adminv/plugins", "adminv/application", "adminv/adminv" %>
 
 	<!-- jQuery UI -->
-	<%= javascript_include_tag "jquery-ui" %>
+	<%= javascript_include_tag "adminv/jquery-ui" %>
 
 	<!-- Facebook -->
 	<script src="http://connect.facebook.net/en_US/all.js#appId=182482768444315&amp;xfbml=1"></script>
@@ -87,6 +87,6 @@
 		<!-- end profiling -->
 	<%- end -%>
 	
-	<%= render :partial => 'admin/javascripts' %>
+	<%= render :partial => 'adminv/javascripts' %>
 	</body>
 </html>

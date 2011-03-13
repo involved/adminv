@@ -93,7 +93,7 @@ header {
 }
 	header #top-bar {
 		min-height: 60px;
-		background: #5D6868 url(../images/adminv/header-bg.gif) repeat-x 0 bottom;
+		background: #5D6868 url(/images/adminv/header-bg.gif) repeat-x 0 bottom;
 		border-bottom: #251f24 1px solid;
 		padding-top: 10px;
 	}
@@ -113,7 +113,7 @@ header {
 	}
 		header nav.sub { 
 			height: 45px;
-			background: url(../images/adminv/header-bg_subnav.gif) repeat-x 0 0; 
+			background: url(/images/adminv/header-bg_subnav.gif) repeat-x 0 0; 
 		}
 
 	/* Account */
@@ -212,9 +212,9 @@ header nav ul#settings-menu {
 			display: block;
 			padding: 5px 15px;
 		}
-		header nav #settings-menu li.account a 	{ background: url(../images/adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
-		header nav #settings-menu li.settings a { background: url(../images/adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
-		header nav #settings-menu li.logout  a	{ background: url(../images/adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; }
+		header nav #settings-menu li.account a 	{ background: url(/images/adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
+		header nav #settings-menu li.settings a { background: url(/images/adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
+		header nav #settings-menu li.logout  a	{ background: url(/images/adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; }
 		
 /* @end */
 
@@ -325,7 +325,7 @@ footer {
 				}
 					.block-toggles ul a {
 						width: 102px;
-						background: url(../images/adminv/block-toggle.png) no-repeat 0 0;
+						background: url(/images/adminv/block-toggle.png) no-repeat 0 0;
 					    display: block;
 					    height: 22px;
 					    margin-top: 1px;
@@ -412,12 +412,12 @@ footer {
 		
 		.block table tr th.headerSortUp {
 			color: #333;
-			background: url(../images/sortd.gif) 95% center no-repeat;
+			background: url(/images/sortd.gif) 95% center no-repeat;
 		}
 		
 		.block table tr th.headerSortDown {
 			color: #333;
-			background: url(../images/sorta.gif) 95% center no-repeat;
+			background: url(/images/sorta.gif) 95% center no-repeat;
 		}
 			
 		.block table tr td.edit {

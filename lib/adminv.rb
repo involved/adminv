@@ -1,5 +1,6 @@
 module Adminv
   module Helpers
-    autoload :ViewHelper, 'menumatic/helpers/view_helper'
+    autoload :ViewHelper, 'adminv/helpers/view_helper'
   end
+  require 'adminv/engine'
 end
