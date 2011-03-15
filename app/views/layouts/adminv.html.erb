@@ -30,14 +30,17 @@
 						<%= render :partial => 'adminv/primary_navigation' %>
 					</div><!-- .grid_12 -->
 				</div><!-- .container -->
-			</nav>
-			<nav class="sub">
-				<div class="container">
-					<div class="grid_9">
-						<%= render :partial => 'adminv/secondary_navigation' %>
-					</div><!-- .grid_12 -->    
-				</div><!-- .container -->
-			</nav><!-- .sub -->
+      </nav>
+
+      <%- unless render(:partial => 'adminv/secondary_navigation').blank? -%>
+        <nav class="sub">
+          <div class="container">
+            <div class="grid_9">
+              <%= render :partial => 'adminv/secondary_navigation' %>
+            </div><!-- .grid_12 -->
+          </div><!-- .container -->
+        </nav><!-- .sub -->
+      <%- end -%>
 		</header>
 		
 
