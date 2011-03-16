@@ -448,47 +448,90 @@ footer {
 
 
 /* @group Form */
-.form { padding: 5px; margin: 10px; }
-.form .field { width: 100%; }
-.form .field_help { margin-left: 145px; font-size: 90%; color: #777; }
-.form label, 
-.form span.label { margin-right: 10px; padding-right: 10px; width: 125px; display: block; float: left;  font-weight: bold; text-align: right; position: relative; }
-.form label em, 
-.form span.label em { position: absolute; right: 0; font-size: 120%; font-style: normal; color: #C00; }
-.form input:focus,
-.form input.error:focus, 
-.form textarea:focus {	background-color: #FFC; border-color: #FC6; }
-.form .upload { margin-bottom: -5em;}
 
-
-.form .buttonrow { margin-left: 145px; display: block; }
-.form .cancel { font-size: 11px; color: #C00; padding-left: 10px; }
-.form .field { margin-bottom: 1.5em; }
-.form .uploader { margin-bottom: .5em !important; }
-.form .field input
-{
-	padding: 4px;
-	border: 1px solid #CCC;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+/* Form reset */
+form, 
+form ul, 
+form ol, 
+form li, 
+form fieldset, 
+form legend, 
+form input, 
+form textarea, 
+form select, 
+form p {
+    margin: 0;
+    padding: 0;
 }
-.form .xsmall { width: 50px; }
-.form .small { width: 100px; }
-.form .medium { width: 200px; }
-.form .large { width: 300px; }
-.form .xlarge { width: 400px; }
-.form input.error { border: red 1px solid; background: #FFE1E3; }
+
+form ol, 
+form ul {
+    list-style: none;
+}
+
+/* Default (Inline labels and fields) */
+form { padding: 5px; margin: 10px; }
+	form li { 
+		width: 100%; 
+		float: left; 
+		display: block;
+		margin-bottom: 15px;
+	}
+		form label, 
+		form span.label { margin-right: 10px; padding-right: 10px; width: 125px; display: block; float: left;  font-weight: bold; text-align: right; position: relative; }
+		form label em, 
+		form span.label em { position: absolute; right: 0; font-size: 120%; font-style: normal; color: #C00; }
+	
+		form li input,
+		form li textarea {
+			padding: 4px;
+			border: 1px solid #CCC;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+		}
+			form input:focus,
+			form input.error:focus, 
+			form textarea:focus {	background-color: #FFC; border-color: #FC6; }
+			
+			form .xsmall { width: 50px; }
+			form .small { width: 100px; }
+			form .medium { width: 200px; }
+			form .large { width: 300px; }
+			form .xlarge { width: 475px; }
+			form input.error { border: red 1px solid; background: #FFE1E3; }
+
+			form li.boolean { position: relative; }
+				form li.boolean label { margin-left: 0px; } 
+				form li.boolean input { 
+					position: relative;
+					right: -80px;
+				}
+
+
+
+
+form li.help { margin-left: 145px; font-size: 90%; color: #777; }
+
+form .upload { margin-bottom: -5em;}
+
+
+form .buttonrow { margin-left: 145px; display: block; }
+form .cancel { font-size: 11px; color: #C00; padding-left: 10px; }
+
+form .uploader { margin-bottom: .5em !important; }
+
 
 /* Label top styles */
-.label-top .field label { width: 100%; display: block; text-align: left; }
-.label-top .field span.label { width: 100%; display: block; float: left; text-align: left; position: relative; }
-.label-top .field .field_help { margin-left: 0; font-size: 11px; }
+.label-top li label { width: 100%; display: block; text-align: left; }
+.label-top li.boolean label { margin-left: -12px; } 
+.label-top li span.label { width: 100%; display: block; float: left; text-align: left; position: relative; }
+.label-top li .field_help { margin-left: 0; font-size: 11px; }
 .label-top .buttonrow { margin-left: 0; }
 .label-top .selector { width: 100%; display: block; float: left; }
 
-.form div.controlset label, 
-.form div.controlset input { display: inline; float: none; }
-.form .controlset label {font-size: 11px; font-weight: normal !important; }
+form div.controlset label, 
+form div.controlset input { display: inline; float: none; }
+form .controlset label {font-size: 11px; font-weight: normal !important; }
 .controlset { margin-bottom: 2.5em; float: left; }
 .controlset .controlset-pad { width: 300px; float: left;  }
 
