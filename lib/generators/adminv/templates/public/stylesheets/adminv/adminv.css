@@ -302,37 +302,33 @@ footer {
 		.block-header {		
 			background: #F1F2F2;
 			border-bottom: 1px solid #CCC;
-			height: 30px;
-			padding: 10px 20px;
+			height: 25px;
+			padding: 15px 20px;
 		}
+			
+			.block-header h2,
+			.block-header h3,
+			.block-header h4 {
+				float: left;
+				display: block;
+			}
+		
+			/* TO FIX OR DELETE
 			.tabs .block-header { height: 8px; padding: 0px; }
 			.block-header .description {
 				float: left;
 			    margin: 9px 0 0;
 			}
-			.block-header h2.description { margin-top: 5px; }
+			.block-header h2.description { margin-top: 5px; }*/
 			
 			/* Block Toggles */
-			.block-toggles ul {
+			.block-toggles {
 				display: block;
 				float: right;
-				list-style: none;
-			}
-				.block-toggles ul li {
-					display: block;
-					float: left;
-					margin-left: 5px
-				}
-					.block-toggles ul a {
-						width: 102px;
-						background: url(/images/adminv/block-toggle.png) no-repeat 0 0;
-					    display: block;
-					    height: 22px;
-					    margin-top: 1px;
-					    padding-top: 6px;
-					}
-						.block-toggles ul a.active { background-position: 0px -30px; }
-
+			}	
+				.block-toggles a { float: left; }
+			
+	
 		/* Block Content */
 		.block-content {
 			display: block;
@@ -340,42 +336,57 @@ footer {
 		}
 			.block-content.table { margin: 0px; }
 		
-		/* Block Pagination */
-		.block-pagination {
+		/* Block Controls */
+		.block-controls {
 			width: 100%;
 			float: left;
-			display: block;	
+			display: block;
 			background: #F1F2F2;
-		    border-top: 1px solid #CCCCCC;
-		    clear: both;
-		    margin-top: 5px;
+			border-top: 1px solid #CCCCCC;
+			margin-top: 5px;
 		}
-			.block-pagination ul {
-				width: 100%;
-				list-style: none;
-				float: left;
-				display: block;
+		
+			/* Block Actions */
+			.block-actions {
+				float: right;
+				display: block;				   
+				padding: 5px 20px;
+				height: 30px;
 			}
-				.block-pagincation ul li {
-					float: left;
-					display: inline-block;
+		
+			/* Block Pagination */
+			.block-pagination {
+				float: left;
+				display: block;				   
+			}
+				.block-pagination ul {
+					list-style: none;
+					float: right;
+					display: block;
 				}
-					
-					.block-pagination li a,
-					.block-pagination li span {
-					    background: #F1F2F2;
-					    display: block;
-					    float: left;
-					    padding: 10px 20px;
-					    position: relative;
+					.block-pagination ul li {
+						float: left;
+						display: inline-block;
+						height: 100%;
 					}
-						.block-pagination li.current span {
-						    background: #FFF;
-						    border-left: 1px solid #CCC;
-						    border-right: 1px solid #CCC;
-						    top: -1px;
+						.block-pagination li a,
+						.block-pagination li span {
+						    background: #F1F2F2;
+						    display: block;
+						    float: left;
+						    padding: 0px 20px;
+						    height: 100%;
+						    position: relative;
+							vertical-align: middle;
+							line-height: 40px;
 						}
-			    
+							.block-pagination li.current span {
+							    background: #FFF;
+							    border-left: 1px solid #CCC;
+							    border-right: 1px solid #CCC;
+							    top: -1px;
+							}
+				    
 /* @end */
 
 /* @group Tables */
@@ -563,17 +574,19 @@ form .controlset label {font-size: 11px; font-weight: normal !important; }
 	
 /** Specific Notification Messages **/
       
+ 
+#flash-message {
+	background: #dbe3ff url('/images/adminv/ui-icon_information.png') 7px 8px no-repeat;
+	border-color: #a2b4ee !important;
+	color: #585b66;
+}     
+      
 #flash-message.warning {
 	background: #fffbcc url('/images/adminv/ui-icon_error.png') 7px 8px no-repeat;
 	border-color: #E6DB55 !important;
 	color: #666452;
 }
 
-/*#flash-message.message {
-	background: #dbe3ff url('/images/adminv/ui-icon_information.png') 7px 8px no-repeat;
-	border-color: #a2b4ee !important;
-	color: #585b66;
-}*/
 
 #flash-message.notice {
 	background: #d5ffce url('/images/adminv/ui-icon_tick.png') 7px 8px no-repeat;
@@ -581,7 +594,7 @@ form .controlset label {font-size: 11px; font-weight: normal !important; }
 	color: #556652;
 }
 
-#flash-message.warning{
+#flash-message.error {
 	background: #ffcece url('/images/adminv/ui-icon_exclamation.png') 7px 8px no-repeat;
 	border-color: #df8f8f !important;
 	color: #665252;
@@ -733,9 +746,6 @@ header nav #settings-menu a { text-shadow: 0px 2px 3px #003f5a; }
 .block-tabs a:hover,
 .block-pagination li a:hover { color: #111; }
 .block-pagination li.current a:hover { color: #959595; }
-
-.block-toggles a { font-size: 11px; color: #000000; font-weight: bold; line-height: 16px; text-transform: uppercase; text-align: center; text-decoration: none; }
-.block-toggles a.active { color: #fff; }
 
 /* @end */
 
