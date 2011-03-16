@@ -1,42 +1,33 @@
 module Adminv
   module Components
-    class Block
+    class Container
       include ActionView::Helpers::TagHelper
       cattr_reader :width_options
-      attr_accessor :header, :tabs, :tables, :options, :html_options
+      attr_accessor :content_areas, :options, :html_options
       @@width_options = {:full => 12, :with_sidebar => 9, :half => 6, :sidebar => 3}
 
       def initialize(*args)
         @header = ""
-        @tabs = []
         @tables = []
+        @content_areas = []
         extract_options!(args)
         extract_html_options!
       end
 
-      # constructs a new header
-      def header(*args)
-
+      # constructs a new table and appends it to the content_areas array
+      def table(*args, &block)
+        content_tag(:div, "Table content", :class => 'block-content table')# if block_given?
       end
 
-      # constructs a tab an appends it to the tabs array
-      def tab(*args)
-
-      end
-
-      # constracuts a new table and appends it to the tables array
-      def table(*args)
-
-      end
-
-      # place to dump all other content - in which case, 'table' should probably a method of BlockContent, not of Block
-      def content(*args)
-
+      # constructs a new content area and appends it to the array
+      def content(*args, &block)
+        content_tag(:div, "Content content", :class => 'block-content')# if block_given?
       end
 
       # takes all the components and wraps them into the correct tags
       def to_s
-        content_tag :section, "Block content #{content}", @html_options
+        container = content_tag(:section, capture(&Proc.new), :class => "block-container")# if block_given?
+        content_tag :section, container, @html_options
       end
 
       private
@@ -58,7 +49,7 @@ module Adminv
            end
         end
 
-        @html_options[:class] = (@html_options[:class].split(" ") + ["block", "grid_#{@@width_options[@options[:width]]}"]).join(" ")
+        @html_options[:class] = (@html_options[:class].split(" ") + ["block", "grid_#{@@width_options[@options[:width]]}", "tabs"]).join(" ")
       end
     end
   end
