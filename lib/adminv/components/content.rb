@@ -9,7 +9,7 @@ module Adminv
         @tab_id = ActiveSupport::SecureRandom.hex(4)
         @options = args.extract_options!
         extract_html_options!
-        @title = args.first# if args.any? && args.first.is_a(String)
+        @title = args.first
       end
 
       def header(*args, &block)
@@ -23,8 +23,9 @@ module Adminv
         @html_content = content_tag(:div, @template.capture(self, &block), :class => "block-content") if block_given?
       end
 
+      # block-tab class may have to be moved into container, instead of here.
       def to_s
-        content_tag(:div, (@header.to_s + @html_content).html_safe, :id => "tab_#{@tab_id}", :class => "block-tab")
+        (@header.to_s + @html_content).html_safe
       end
 
       def extract_html_options!

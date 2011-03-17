@@ -37,10 +37,14 @@ module Adminv
       end
 
       def to_s
-        tabs = content_areas.map{ |content_area| content_tag(:li, link_to(content_area.title || "Tab Title", "#tab_#{content_area.tab_id}")) }.join("").html_safe
-        tabs = content_tag(:nav, content_tag(:ul, tabs), :class => 'block-tabs')
-        content = content_tag(:section, content_areas.map{|content_area| content_area.to_s}.join("").html_safe, :class => 'block-container')
-        content_tag :section, tabs + content, @html_options
+        if content_areas.count > 1
+          tabs = content_areas.map{ |content_area| content_tag(:li, link_to(content_area.title || "Tab Title", "#tab_#{content_area.tab_id}")) }.join("").html_safe
+          tabs = content_tag(:nav, content_tag(:ul, tabs), :class => 'block-tabs')
+          content = content_tag(:section, content_areas.map{|content_area| content_tag(:div, content_area.to_s, :id => "tab_#{content_area.tab_id}", :class => "block-tab")}.join("").html_safe, :class => 'block-container')
+          content_tag :section, tabs + content, @html_options
+        else
+          content = content_tag(:section, content_areas.first.to_s, :class => "block-container")
+        end
       end
 
       private
