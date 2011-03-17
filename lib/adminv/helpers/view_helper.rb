@@ -1,9 +1,9 @@
 module Adminv
   module Helpers
     module ViewHelper
-      def adminv_container(options = {})
-        container = Adminv::Components::Container.new(options)
-        yield container if block_given?
+      def adminv_container(options = {}, &block)
+        container = Adminv::Components::Container.new(self, options)
+        container.render(&block)
         container.to_s
       end
     end
