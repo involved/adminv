@@ -55,7 +55,7 @@ module Adminv
         @html_options[:class] = ""
         [:id, :class].each do |key|
            if @options.has_key?(key)
-             @html_options[key] == @options[key]
+             @html_options[key] = @options[key]
              @options.delete(key)
            end
         end
