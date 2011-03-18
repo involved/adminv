@@ -12,7 +12,8 @@ module Adminv
         @header = ""
         @tables = []
         @content_areas = []
-        extract_options!(args) # this should be replaced with the built-in rails method
+        @options = args.extract_options!
+        @options[:width] ||= :full
         extract_html_options!
       end
 
@@ -43,19 +44,11 @@ module Adminv
           content = content_tag(:section, content_areas.map{|content_area| content_tag(:div, content_area.to_s, :id => "tab_#{content_area.tab_id}", :class => "block-tab")}.join("").html_safe, :class => 'block-container')
           content_tag :section, tabs + content, @html_options
         else
-          content = content_tag(:section, content_areas.first.to_s, :class => "block-container")
+          content = content_tag :section, content_tag(:section, content_areas.first.to_s, :class => "block-container"), @html_options
         end
       end
 
       private
-      # intializes block options
-      def extract_options!(*args)
-        puts args
-        @options = {}
-        @options = args.first if args.any? && args.first.is_a?(Hash)
-        @options[:width] ||= :full
-      end
-
       # intializes and extracts HTML-specific options
       def extract_html_options!
         @html_options = {}

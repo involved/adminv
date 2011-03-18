@@ -29,9 +29,19 @@ module Adminv
       end
 
       def to_s
-        content_tag(:div, content_tag(:table, rows.map{ |row| row.to_s }.join("").html_safe, :width => "100%"), :class => "block-content table")
-      end
+        rows_html = rows.map{ |row| row.to_s }.join("").html_safe
+        if rows.empty? || (rows.count == 1 && rows.first.is_heading)
+          col_count = 1
+          col_count = rows.first.columns.count if rows.any? && rows.first.columns.any?
+          rows_html += content_tag(:tr, content_tag(:td, "No records found.", :colspan => col_count))
+        end
 
+        if controls_html.blank?
+          content_tag(:div, (@header.to_s + content_tag(:table, rows_html, :width => "100%")).html_safe, :class => "block-content table")
+        else
+          content_tag(:div, (@header.to_s + content_tag(:table, rows_html, :width => "100%") + controls_html).html_safe, :class => "block-content table")
+        end
+      end
     end
   end
 end

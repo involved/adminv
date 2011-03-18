@@ -11,7 +11,9 @@ module Adminv
         @columns = []
       end
 
-      def col(value)
+      def col(*args, &block)
+        value = args.first if args.any?
+        value = @template.capture(&block) if block_given?
         self.cols([value])
       end
 
@@ -25,7 +27,7 @@ module Adminv
 
       def to_s
         cell_tag = self.is_heading ? :th : :td
-        content_tag(:tr, @columns.map{ |column| content_tag(cell_tag, column) }.join("").html_safe)
+        content_tag(:tr, @columns.map{ |column| content_tag(cell_tag, column.html_safe) }.join("").html_safe)
       end
 
     end
