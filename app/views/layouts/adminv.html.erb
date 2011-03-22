@@ -10,7 +10,9 @@
 	<%= favicon_link_tag 'adminv/favicon.ico', :rel => 'shortcut icon', :type => 'image/ico' %>
 	<%= favicon_link_tag 'adminv/apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
 	
-	<%= stylesheet_link_tag "adminv/html5boilerpate", "adminv/adminv", "adminv/adminv-changes", "adminv/css3buttons" %>
+	<%= stylesheet_link_tag "adminv/html5boilerpate", "adminv/adminv", "adminv/adminv-changes" %>
+	<%#= css3buttons_stylesheets :include_reset => false %>
+	
 	<%= csrf_meta_tag %>
 	<%= render :partial => 'adminv/html_head' %>
 	<%= javascript_include_tag "adminv/lib/modernizr-1.7.min" %>
