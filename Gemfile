@@ -4,4 +4,4 @@ source "http://rubygems.org"
 gemspec
 
 # CSS3 Button Framework
-gem 'css3buttons', '~>0.9.0'
+gem 'css3buttons', '~>0.9.1'
