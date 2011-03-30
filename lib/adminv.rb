@@ -8,6 +8,7 @@ module Adminv
   end
   module Helpers
     autoload :ViewHelper, 'adminv/helpers/view_helper'
+    autoload :FormHelper, 'adminv/helpers/form_helper'
   end
   require 'adminv/engine'
 end
