@@ -489,6 +489,8 @@ form.block-form {
 	}
 
 /* Sudo-Table Header */
+.sudo-table { display:table; }
+
 .sudo-table ul.header { 
 	height: 28px;
 	background: url(/images/adminv/ui-bg_table_header.png) repeat-x 0 bottom;
@@ -507,33 +509,53 @@ form.block-form {
 			.sudo-table ul.header li:last-child { border: none; }
 			
 	/* Sudo-Table Rows */
-	.sudo-table ul li.row {
+	.sudo-table .row {
 		float: left;
-		display: block;
+		display: table-row;
 		padding: 0px;
 		margin: 0px;
 		border-bottom: 1px solid #ddd;
 	}	
-		.sudo-table ul li.odd { background: #fbfbfb; }
-		.sudo-table ul li.even { background: #fff; }
-			.sudo-table ul { margin: 0px; padding: 0px; } 
-				.sudo-table ul li ul li { 
+		.sudo-table .row.odd { background: #fbfbfb; }
+		.sudo-table .row.even { background: #fff; }
+			.sudo-table .row .inner { 
+				width: 100%; 
+				margin: 0px; 
+				padding: 0px; 
+			}
+				.sudo-table .col { 
 					margin: 0px;
 					padding: 5px 10px;
+					display: table-cell; 
+					width: auto;
 				}
 				
 			.sudo-table .row li:first-child { margin-left: 10px; }
 			.sudo-table .row li:last-child { margin-right: 10px; }
-			.sudo-table .row li.col0 { width: 5px; }
-			.sudo-table .row li.col1 { width: 30%; }
-			.sudo-table .row li.col2 { width: 15%; } 
-			.sudo-table .row li.col3 { width: 15%; } 
-			.sudo-table .row li.col4 { width: 10%; float: right; } 
-			.sudo-table .row li.sort-handle { 
+			
+
+			.sudo-table .row .col.edit { 
+				float: right;
+				opacity: 0.2;
+				filter: alpha(opacity=20);
+			} 
+			
+				.sudo-table .row:hover .col.edit,
+				.sudo-table .row .col.edit.active { 
+					float: right;
+					opacity: 1;
+					filter: alpha(opacity=100);
+				} 
+				.sudo-table .row .col.edit a { float: left; }
+				.sudo-table .row .col.edit a span { margin-right: 0px; }
+				
+				
+				
+			.sudo-table .row .col.sort-handle { 
 				background: url(/images/adminv/ui-icon_sortable.png) no-repeat 0 10px; 
 				cursor: move;
 			}
-			.sudo-table ul li ul li.expanded { 
+			.sudo-table .expanded { 
 				width: 100%;
 				padding: 10px 0px 0px 0px;
 				margin: 0px;
@@ -541,11 +563,11 @@ form.block-form {
 				border-top: 1px solid #ddd;
 				display: none; /* hide by default */
 			}
-				.sudo-table ul li ul li.expanded li {
+				.sudo-table .expanded li {
 					padding: 0px 0px 10px 0px;
 					margin: 0px;
 				}
-				.sudo-table ul li ul li.expanded label { width: 150px; }
+				.sudo-table .expanded label { width: 150px; }
 		
 /* Sorting */ 		
 .ui-state-highlight { 
