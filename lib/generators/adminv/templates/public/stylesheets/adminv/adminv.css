@@ -471,7 +471,7 @@ footer {
 /* @end */
 
 
-/* @group Sortable Sudo-Table */
+/* @group Sortable table */
 
 form.block-form {
 	margin: 0px;
@@ -483,92 +483,97 @@ form.block-form {
 	}
 
 	.block.table form,
-	form .sudo-table li { 
+	form .table li { 
 		margin: 0px;
 		padding: 0px;
 	}
 
-/* Sudo-Table Header */
-.sudo-table { display:table; }
+/* table Header */
+.table { display: table; }
+	.table:before, .container:after { content: "\0020"; display: block; height: 0; visibility: hidden;} 
+	.table:after { clear: both; }
+	.table { zoom: 1; }
 
-.sudo-table ul.header { 
-	height: 28px;
-	background: url(/images/adminv/ui-bg_table_header.png) repeat-x 0 bottom;
-	padding: 0px;
-	line-height: 28px;
-	border-bottom: #ccc 1px solid;
-}
-	.sudo-table ul.header li { 
+	.table .row.header {
+		display: table-header-group; 
+		height: 28px;
+		background: url(/images/adminv/ui-bg_table_header.png) repeat-x 0 bottom;
 		padding: 0px;
-		border-right: #DCE0E2 1px solid;
- }
-		.sudo-table ul.header li { 
-			padding: 0px 10px; 
-			font-weight: bold;
+		line-height: 28px;
+		border-bottom: #ccc 1px solid;
+	}
+		.table .row.header .col { 
+			display: table-column;
+			padding: 0px;
+			border-right: #DCE0E2 1px solid;
 		}
-			.sudo-table ul.header li:last-child { border: none; }
-			
-	/* Sudo-Table Rows */
-	.sudo-table .row {
-		float: left;
-		display: table-row;
-		padding: 0px;
-		margin: 0px;
-		border-bottom: 1px solid #ddd;
-	}	
-		.sudo-table .row.odd { background: #fbfbfb; }
-		.sudo-table .row.even { background: #fff; }
-			.sudo-table .row .inner { 
-				width: 100%; 
-				margin: 0px; 
-				padding: 0px; 
+			.table .row.header .col { 
+				padding: 0px 10px; 
+				font-weight: bold;
 			}
-				.sudo-table .col { 
-					margin: 0px;
-					padding: 5px 10px;
-					display: table-cell; 
-					width: auto;
-				}
+				.table .row.header .col:last-child { border: none; }
 				
-			.sudo-table .row li:first-child { margin-left: 10px; }
-			.sudo-table .row li:last-child { margin-right: 10px; }
-			
-
-			.sudo-table .row .col.edit { 
-				float: right;
-				opacity: 0.2;
-				filter: alpha(opacity=20);
-			} 
-			
-				.sudo-table .row:hover .col.edit,
-				.sudo-table .row .col.edit.active { 
+		/* table Rows */
+		.table .row {
+			float: left;
+			display: table-row;
+			padding: 0px;
+			margin: 0px;
+			border-bottom: 1px solid #ddd;
+		}	
+			.table .row.odd { background: #fbfbfb; }
+			.table .row.even { background: #fff; }
+				.table .row .inner { 
+					width: 100%; 
+					margin: 0px; 
+					padding: 0px; 
+				}
+					.table .col { 
+						margin: 0px;
+						padding: 5px 10px;
+						display: table-cell; 
+						width: auto;
+					}
+					
+				.table .row li:first-child { margin-left: 10px; }
+				.table .row li:last-child { margin-right: 10px; }
+				
+	
+				.table .row .col.edit { 
 					float: right;
-					opacity: 1;
-					filter: alpha(opacity=100);
+					opacity: 0.2;
+					filter: alpha(opacity=20);
 				} 
-				.sudo-table .row .col.edit a { float: left; }
-				.sudo-table .row .col.edit a span { margin-right: 0px; }
 				
-				
-				
-			.sudo-table .row .col.sort-handle { 
-				background: url(/images/adminv/ui-icon_sortable.png) no-repeat 0 10px; 
-				cursor: move;
-			}
-			.sudo-table .expanded { 
-				width: 100%;
-				padding: 10px 0px 0px 0px;
-				margin: 0px;
-				background: #fffce5;
-				border-top: 1px solid #ddd;
-				display: none; /* hide by default */
-			}
-				.sudo-table .expanded li {
-					padding: 0px 0px 10px 0px;
-					margin: 0px;
+					.table .row:hover .col.edit,
+					.table .row .col.edit.active { 
+						float: right;
+						opacity: 1;
+						filter: alpha(opacity=100);
+					} 
+					.table .row .col.edit a { float: left; }
+					.table .row .col.edit a span { margin-right: 0px; }
+					
+					
+					
+				.table .row .col.sort-handle { 
+					background: url(/images/adminv/ui-icon_sortable.png) no-repeat 0 10px; 
+					cursor: move;
 				}
-				.sudo-table .expanded label { width: 150px; }
-		
+				.table .expanded { 
+					width: 100%;
+					padding: 10px 0px 0px 0px;
+					margin: 0px;
+					background: #fffce5;
+					border-top: 1px solid #ddd;
+					display: none; /* hide by default */
+				}
+					.table .expanded li {
+						padding: 0px 0px 10px 0px;
+						margin: 0px;
+					}
+					.table .expanded label { width: 150px; }
+			
 /* Sorting */ 		
 .ui-state-highlight { 
 	background: lightgoldenrodyellow !important;
