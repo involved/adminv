@@ -17,7 +17,7 @@ module Adminv
       def new_child_fields_template(form_builder, association, options = {})
         options[:object] ||= form_builder.object.class.reflect_on_association(association).klass.new
         options[:partial] ||= association.to_s.singularize
-        options[:form_builder_local] ||= :form
+        options[:form_builder_local] ||= :f
         options[:locals] ||= {}
 
         content_tag(:div, :id => "#{association}_fields_template", :style => "display: none") do
@@ -27,7 +27,7 @@ module Adminv
           elsif defined?(Formtastic)
             fields_for_method = :semantic_fields_for
           end
-          form_builder.send(fields_for_method, association, options[:object], :child_index => "new_#{association}") do |f|
+          form_builder.simple_fields_for( association, options[:object], :child_index => "new_#{association}") do |f|
             options[:locals][options[:form_builder_local]] = f
             render(:partial => options[:partial], :locals => options[:locals])
           end
