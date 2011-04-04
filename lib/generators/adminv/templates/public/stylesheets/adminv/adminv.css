@@ -571,13 +571,13 @@ form.block-form {
 							-khtml-opacity: 1; 
 							opacity: 1; 
 						} 
-						.table .row .col.edit a { float: left; }
-						.table .row .col.edit a span { margin-right: 0px; }
+						.table .row .col.edit .icon-only { padding-right: 0px; }
 						
 					/* Table Sortable */		
 					.table .row .col.sort-handle { 
 						background: url(/images/adminv/ui-icon_sortable.png) no-repeat 0 10px; 
 						cursor: move;
+						height: 20px;
 					}
 					
 					.table .ui-state-highlight { 
