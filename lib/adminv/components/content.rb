@@ -20,7 +20,8 @@ module Adminv
       end
 
       def actions(&block)
-        @actions = @template.capture(&block) if block_given?
+        @template.capture(&block)
+        #@actions = @template.capture(&block) if block_given?
       end
 
       def pagination(&block)
