@@ -2,16 +2,33 @@ module Adminv
   module Helpers
     module FormHelper
       def add_remove_row(form, association, options={})
-        add_row(form, association, options) + remove_row(form)
+        options_add = options
+        options_remove = options
+        options_add[:link_method] = :positive_add_pill_button_link_to
+        options_remove[:link_method] = :negative_remove_pill_button_link_to
+        button_group do
+          add_row(form, association, options)
+          remove_row(form, options)
+        end
       end
 
       def add_row(form, association, options={})
-        options[:label] ||= "+"
-        new_child_fields_template(form, association, options) + link_to(options[:label], "javascript:void(0)", :class => "add_remove_toggle add_row", :"data-association" => association, :"data-max-rows" => options[:max_rows])
+        options[:label] ||= "add"
+        options[:link_method] ||= :positive_add_button_link_to
+        options[:target] ||= ""
+        new_child_fields_template(form, association, options) + send(options[:link_method], options[:label], "javascript:void(0)", :class => "add_remove_toggle add_row", :"data-association" => association, :"data-max-rows" => options[:max_rows], :"data-target" => options[:target])
       end
 
-      def remove_row(form)
-        form.hidden_field(:_destroy) + link_to("-", "javascript:void(0)", :class => "add_remove_toggle remove_row")
+      def clone_row(form, association, target, options={})
+        options[:label] ||= "add"
+        options[:link_method] ||= :positive_add_button_link_to
+        send(options[:link_method], options[:label], "javascript:void(0)", :class => "add_remove_toggle add_row", :"data-association" => association, :"data-max-rows" => options[:max_rows], :"data-template-target" => target)
+      end
+
+      def remove_row(form, options = {})
+        options[:label] ||= "remove"
+        options[:link_method] ||= :negative_remove_button_link_to
+        form.hidden_field(:_destroy) + send(options[:link_method] ,options[:label], "javascript:void(0)", :class => "add_remove_toggle remove_row")
       end
 
       def new_child_fields_template(form_builder, association, options = {})
