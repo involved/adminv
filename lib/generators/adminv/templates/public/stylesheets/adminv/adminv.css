@@ -308,17 +308,17 @@ footer {
 		.block-header {		
 			background: #F1F2F2;
 			border-bottom: 1px solid #CCC;
-			padding: 5px 0px;
-			display: block;		
+			padding: 5px 20px;	
 			width: 100%;
 			float: left;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;	
 		}
 			.block-header h2,
 			.block-header h3,
 			.block-header h4 {
 				float: left;
-				display: block;
-				margin-left: 20px;
 				line-height: 30px;
 			}
 		
@@ -337,10 +337,12 @@ footer {
 			
 		/* Block Content */
 		.block-content {
-			width: 95%;
-			margin: 2.5%;			
+			width: 100%;
+			padding: 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;			
 			float: left;
-			display: block;
 		}
 		
 		/* Block Controls */
@@ -494,10 +496,12 @@ form.block-form {
 	float: left;
 }
 
-	.table { display: table; }
-		.table:before, .container:after { content: "\0020"; display: block; height: 0; visibility: hidden;} 
+	.table { 
+		display: table;
+		width: 100%; 
+	}
+		.table:before, .container:after { content: "\0020"; display: block; height: 0; visibility: hidden; } 
 		.table:after { clear: both; }
-		.table { zoom: 1; }
 	
 		.table .row.header {
 			display: table-header-group; 
@@ -519,6 +523,14 @@ form.block-form {
 					.table .row.header .col:last-child { border: none; }
 					
 			/* Table Rows */
+			
+			.table .row-group { 
+				width: 100%; 
+				margin: 0px; 
+				padding: 0px; 
+				display: table-row-group; 
+			}
+			
 			.table .row {
 				float: left;
 				width: 100%;
@@ -535,7 +547,7 @@ form.block-form {
 						padding: 0px; 
 					}		
 					.table .row li:first-child { margin-left: 10px; }
-					.table .row li:last-child { margin-right: 10px; }
+					.table .row li.edit { margin-right: 10px; }
 						
 				/* Table Columns */	
 				.table .col { 
@@ -546,22 +558,26 @@ form.block-form {
 				}	
 					.table .row .col.edit { 
 						float: right;
-						opacity: 0.2;
-						filter: alpha(opacity=20);
+						filter: alpha(opacity=30);
+						-moz-opacity: 0.3; 
+						-khtml-opacity: 0.3; 
+						opacity: 0.3; 
 					} 
 						.table .row:hover .col.edit,
 						.table .row .col.edit.active { 
 							float: right;
-							opacity: 1;
 							filter: alpha(opacity=100);
+							-moz-opacity: 1; 
+							-khtml-opacity: 1; 
+							opacity: 1; 
 						} 
-						.table .row .col.edit a { float: left; }
-						.table .row .col.edit a span { margin-right: 0px; }
+						.table .row .col.edit .icon-only { padding-right: 0px; }
 						
 					/* Table Sortable */		
 					.table .row .col.sort-handle { 
 						background: url(/images/adminv/ui-icon_sortable.png) no-repeat 0 10px; 
 						cursor: move;
+						height: 20px;
 					}
 					
 					.table .ui-state-highlight { 
@@ -581,7 +597,12 @@ form.block-form {
 					}	
 					
 					/* Table Accordion */	
-					.table .expanded { 
+					.row.expanded .col.edit { 
+						opacity: 1;
+						filter: alpha(opacity=100);
+					}
+					
+					.table .details { 
 						width: 100%;
 						padding: 10px 0px 0px 0px;
 						margin: 0px;
@@ -589,11 +610,11 @@ form.block-form {
 						border-top: 1px solid #ddd;
 						display: none; /* hide by default */
 					}
-						.table .expanded li {
+						.table .details li {
 							padding: 0px 0px 10px 0px;
 							margin: 0px;
 						}
-						.table .expanded label { width: 150px; }
+						.table .details label { width: 150px; }
 	
 	
 /* @end */
@@ -622,7 +643,11 @@ form ul {
 }
 
 /* Form Defaults */
-form { padding: 5px; margin: 10px; }
+form { 
+	padding: 0px; 
+	margin: 0px; 
+}
+
 	form li { 
 		width: 100%; 
 		float: left; 
@@ -708,7 +733,11 @@ form .controlset label {font-size: 11px; font-weight: normal !important; }
 .wym_box  { 
 	float: left;
 	display: block;
-	width: 93%;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
 }
 	.wym_tools ul li { width: auto; }
 	.wym_skin_default .wym_dropdown ul { width: 135px; }

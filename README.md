@@ -16,6 +16,7 @@ Start by adding the gem to your `gemfile`:
 Then you can run the generators to create the public assets:
 
     $ rails g adminv:views
+    $ rails g css3buttons
 
 This will add some images, stylesheets and javascripts to your `/public`
 directory. In addition, some view partials will be created under
@@ -39,7 +40,7 @@ Also, it means that if we make any fundamental changes to the main
 layout - you can safely update without breaking your work
 
 
-# But I want to edit it!
+# But I want to edit it! (Not yet Impleneted)
 
 Understood! Generate away:
 
