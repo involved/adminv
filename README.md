@@ -40,7 +40,7 @@ Also, it means that if we make any fundamental changes to the main
 layout - you can safely update without breaking your work
 
 
-# But I want to edit it! (Not yet Impleneted)
+# But I want to edit it! (Not yet Implemeted)
 
 Understood! Generate away:
 
