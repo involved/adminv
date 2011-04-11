@@ -15,7 +15,7 @@ Start by adding the gem to your `gemfile`:
 
 Then you can run the generators to create the public assets:
 
-    $ rails g adminv:views
+    $ rails g adminv:install
     $ rails g css3buttons
 
 This will add some images, stylesheets and javascripts to your `/public`
