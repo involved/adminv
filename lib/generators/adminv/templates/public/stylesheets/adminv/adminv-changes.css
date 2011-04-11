@@ -4,16 +4,3 @@
 	URL: https://github.com/jordan-lewis/adminv
 */
 
-/* @group Group */
-
-select#ride_inspector_ride_id {
-	float: left;
-	display: block;
-	margin: 0px 20px 0px 0px;
-	font-size: 16px;	
-}
-
-
-
-/* @end */
-

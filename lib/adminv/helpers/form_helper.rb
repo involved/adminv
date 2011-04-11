@@ -28,7 +28,9 @@ module Adminv
       def remove_row(form, options = {})
         options[:label] ||= "remove"
         options[:link_method] ||= :negative_remove_button_link_to
-        form.hidden_field(:_destroy) + send(options[:link_method] ,options[:label], "javascript:void(0)", :class => "add_remove_toggle remove_row")
+        link_class = "add_remove_toggle remove_row"
+        link_class += " #{options[:class]}" if options[:class].to_s
+        form.hidden_field(:_destroy) + send(options[:link_method] ,options[:label], "javascript:void(0)", :class => link_class)
       end
 
       def new_child_fields_template(form_builder, association, options = {})
