@@ -5,7 +5,7 @@ module Adminv
       include ActionView::Helpers::UrlHelper
       cattr_reader :width_options
       attr_accessor :template, :content_areas, :options, :html_options
-      @@width_options = {:full => 12, :with_sidebar => 9, :grid7 => 7, :half => 6, :sidebar => 3, :grid2 => 2}
+      @@width_options = {:full => 12, :with_sidebar => 9, :with_two_sidebar => 7, :half => 6, :sidebar => 3, :actions_sidebar => 2}
 
       def initialize(template, *args, &block)
         @template = template
