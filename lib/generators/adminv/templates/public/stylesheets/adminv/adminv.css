@@ -360,18 +360,22 @@ header nav.sub ul#actions-menu {
 				}
 					.sidetabs ul li a {
 					    border: 1px solid transparent;
-					    border-radius: 4px;	
+					    -moz-border-radius:4px;
+						-webkit-border-radius: 4px;
+						border-radius: 4px;
 					    display: block;
 					    font-size: 14px;
 					    padding: 8px 10px 7px;
 					    text-decoration: none;
 					    color: #4183C4;
 					}
-						.sidetabs ul li a:hover{
+						.sidetabs ul li a:hover,
+						.sidetabs ul li #inspect-select:hover {
 							background:#f1f1f1;
 						}
 					
-						.sidetabs ul li.active a {
+						.sidetabs ul li.active a,
+						.sidetabs ul li.active #inspect-select {
 						    border: #ddd 1px solid;
 						    color: #333333;
 						    font-weight: bold;
@@ -394,20 +398,16 @@ header nav.sub ul#actions-menu {
 	#inspect-select {
 		width: 100%;
 		float: left;
-		padding: 5px 0px 5px 0px;	
+		padding: 0px;
+		 -moz-border-radius:4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
 	}
-	
-		#inspect-select h3 {
-			float: left;
-			display: inline-block;
-			line-height: 18px;
-			margin-right: 10px;
-		}
 	
 		#inspect-select select {
 			float: left;
 			display: block;
-			margin: 0px 20px 8px 0px;
+			margin: 6px 20px 6px 10px;
 			font-size: 16px;	
 		}
 
