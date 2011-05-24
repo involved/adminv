@@ -12,6 +12,9 @@ from the fruits of our labour.
 Start by adding the gem to your `gemfile`:
 
     gem 'adminv'
+		
+		_Manual Dependency (Until gem is fixed)_
+		gem 'css3buttons', '0.9.4'
 
 Then you can run the generators to create the public assets:
 
@@ -40,7 +43,7 @@ Also, it means that if we make any fundamental changes to the main
 layout - you can safely update without breaking your work
 
 
-# But I want to edit it! (Not yet Implemeted)
+# TODO: But I want to edit it! (Not yet Implemeted)
 
 Understood! Generate away:
 
