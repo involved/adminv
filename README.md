@@ -13,7 +13,8 @@ Start by adding the gem to your `gemfile`:
 
     gem 'adminv'
 		
-__Manual Dependency__ (Until gem is fixed)  
+__Manual Dependency__ (Until gem is fixed):  
+
     gem 'css3buttons', '0.9.4'
 
 Then you can run the generators to create the public assets:
