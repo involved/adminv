@@ -451,6 +451,16 @@ footer {
 		}
 			.block-head a.back:hover { text-decoration: underline; }
 	
+	/* Block Title */
+	.block-title {
+		float: left;
+		border: none;
+		padding: 10px 15px 20px 15px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;	
+	}
+	
 	/* Block Tabs */
 	.block-tabs {
 		width: 100%;
@@ -1136,7 +1146,9 @@ header dl.account span { color: #c5c4c4 }
 header dl.account dd.role { font-size: 11px; }
 
 
-.heading h1 { padding-left: 10px; }
+/*.heading h1 { padding-left: 10px; }*/
+
+
 
 /* Overview Lists */
 dl.overview { font-size: 17px; }

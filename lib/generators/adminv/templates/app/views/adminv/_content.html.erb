@@ -1,8 +1,13 @@
-<%- if content_for? :sidebar %>
+<%- if content_for? :sidebar_left %>
   <%= adminv_container :width => :sidebar, :class => 'sidetabs' do |container| %>
     <%= container.content do |content| %>
-      <%= yield :sidebar %>
+      <%= yield :sidebar_left %>
     <% end %>
   <% end %>
 <% end %>
+
 <%= yield %>
+
+<%- if content_for? :sidebar_right %>
+	<%= yield :sidebar_right %>
+<% end %>
