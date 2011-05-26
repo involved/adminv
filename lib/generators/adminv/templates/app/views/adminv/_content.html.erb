@@ -6,7 +6,9 @@
   <% end %>
 <% end %>
 
-<%= yield %>
+<div class="block-wrapper">
+	<%= yield %>
+</div>
 
 <%- if content_for? :sidebar_right %>
 	<%= yield :sidebar_right %>
