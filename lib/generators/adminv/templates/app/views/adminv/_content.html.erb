@@ -6,10 +6,4 @@
   <% end %>
 <% end %>
 
-<div class="block-wrapper align-<%= content_for?(:sidebar_left) ? "right" : 'left' %>">
-	<%= yield %>
-</div>
-
-<%- if content_for? :sidebar_right %>
-	<%= yield :sidebar_right %>
-<% end %>
+<%= yield %>
