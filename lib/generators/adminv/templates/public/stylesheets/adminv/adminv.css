@@ -57,6 +57,10 @@
 .omega { margin-right:0px; }
 .cleargrid { clear: left; }
 
+.left { float: left; }
+.right { float: right; }
+
+
 .container {
 	min-width: 960px; 
 	max-width: 1200px; 
@@ -72,6 +76,8 @@
 
 /* @group Defaults */
 html, body { /*height: 100%;*/ }
+
+body{ background: url(../../images/adminv/bg-tile_page.gif) repeat; }
 #wrapper { /*height: 100%;*/ }
 	#main {	
 		margin-top: 40px; 
@@ -217,7 +223,7 @@ header nav ul#settings-menu {
 		}
 		header nav #settings-menu li.account a 	{ background: url(/images/adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
 		header nav #settings-menu li.settings a { background: url(/images/adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
-		header nav #settings-menu li.logout  a	{ background: url(/images/adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; }
+		header nav #settings-menu li.logout  a	{ background: url(/images/adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; font-size: 0px; }
 		
 /* @end */
 
@@ -336,13 +342,17 @@ header nav.sub ul#actions-menu {
 	min-height: 100%;
 	height:auto !important;
 	height: 100%;
+	padding-top: 8px;
 }
 	
 	.sidetabs .block-container { 
 		border: none; 
 		margin: 0px;
 	}
-		.sidetabs .block-content { padding: 0px 20px 20px 0px; }
+		.sidetabs .block-content { 
+			background: none;
+			padding: 0px 20px 20px 0px;
+		}
 			.sidetabs h3 { padding-bottom: 10px; }
 
 			.sidetabs .actions,
@@ -432,6 +442,7 @@ footer {
 	/* Block Head */
 	.block-head {
 		float: left;
+		background: #fff;
 		border: #DDDDDD 1px solid;
 		padding: 10px 15px;
 		margin-bottom: 20px;
@@ -455,11 +466,17 @@ footer {
 	.block-title {
 		float: left;
 		border: none;
-		padding: 10px 15px 20px 15px;
+		padding: 10px 15px 10px 15px;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;	
 	}
+	
+	/* Block Wrapper */
+	.block-wrapper {
+		background: red;
+	}
+		.block-wrapper.align-right section.block { float: right; }
 	
 	/* Block Tabs */
 	.block-tabs {
@@ -513,17 +530,27 @@ footer {
 		.block.hint .block-container { background: #fbfde0; border-color: #eae8b6; }
 			.block.hint h3 { padding-bottom: 5px; }
 			.block.hint p { padding-bottom: 3px; }
-		.block.actions .block-container { 
-			border: none;
-			/*border: 3px solid #eee; 
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-			-moz-box-shadow: 0px 0px 0px 2px #ddd inset;*/
-		}
-			.block.actions .block-container .block-content { padding: 0px 0px 20px 0px; }
-			.block.actions .block-container .block-content .button { /*width: 100%; */}
+		
+		.block.actions { margin: 55px 0px 0px -8px; }
+			.block.actions .block-container { 
+				background: #fff;
+				background: url(../../images/adminv/bg-tile_sidebar.gif) repeat-y 0 0;
+				border: #c9c9c9 1px solid;
+				border-left: 0px;
+				-moz-border-radius:0px 2px 2px 0px;
+				-webkit-border-radius:0px 2px 2px 0px;
+				border-radius:0px 2px 2px 0px;
+				padding: 15px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;	
+				width: auto;
+				min-width: 160px;
+			}
+				.block.actions .block-container .block-content { background: none; /*padding: 0px 0px 20px 0px;*/ }
+				.block.actions .block-container .block-content .button { /*width: 100%; */}
 			
-		.block.tab-offset { margin-top: 40px; }
+		.block.tab-offset { margin-top: 90px; /*margin-top: 40px;*/ }
 	
 		/* Block Header */
 		.block-header {		
@@ -562,6 +589,7 @@ footer {
 			
 		/* Block Content */
 		.block-content {
+			background: #fff;
 			width: 100%;
 			padding: 20px;
 			-webkit-box-sizing: border-box;
@@ -576,9 +604,14 @@ footer {
 			float: left;
 			background: #F1F2F2;
 			border-top: 1px solid #CCCCCC;
+			
 			margin-top: 5px;
 		}
 		
+		.block-controls + .block-content {
+			border-bottom: 1px solid #CCCCCC;
+		}
+
 			/* Block Actions */
 			.block-actions {
 				float: right;		   
@@ -643,7 +676,6 @@ form.block-form {
 	width: 100%;
 	float: left;
 }
-
 	.table { 
 		display: table;
 		width: 100%; 
@@ -699,6 +731,7 @@ form.block-form {
 						display: table-cell; 
 						vertical-align: middle;
 					}	
+						.table .row .col span { color: #666; font-style: italic; }
 						.table .row .col:first-child { padding-left: 20px !important; }				
 						.table .row .col.actions	 { 
 							min-width: 100px;
@@ -818,18 +851,18 @@ form.block-form {
 		}
 
 		.table.accordion .details .table { float: none; }
-			.table.accordion .details .table li {
+			.table.accordion .details .table > li {
 				float: none;
 				display: table-row;
 			}
-				.table.accordion .details .table li label,
-				.table.accordion .details .table li input { 
+				.table.accordion .details .table > li label,
+				.table.accordion .details .table > li input { 
 					display: table-cell;
 					float: none;
 					padding: 5px 0px;
 					width: auto;
 				}
-					.table.accordion .details .table li input { width: 100%; }
+					.table.accordion .details .table > li input { width: 100%; }
 	
 		
 /* @end */
@@ -894,9 +927,10 @@ form {
 			-moz-border-radius: 3px;
 			-webkit-border-radius: 3px;
 		}
+		
 			form input:focus,
 			form input.error:focus, 
-			form textarea:focus {	background-color: #FFC; border-color: #FC6; }
+			form textarea:focus { background-color: #FFC; border-color: #FC6; }
 			
 			form .xsmall { width: 50px; }
 			form .small  { width: 100px; }
@@ -910,6 +944,7 @@ form {
 			}
 			form input.error { border: red 1px solid; background: #FFE1E3; }
 			form .error { color: red; }
+			form span { padding-left: 20px; }
 
 			form li.boolean { position: relative; }
 				form li.boolean label { margin-left: 0px; } 
@@ -918,6 +953,23 @@ form {
 					right: -80px;
 				}
 
+form .form-divider {
+	float: left;	
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;		
+	padding: 0px 10px 0px 50px;
+	margin-bottom: 10px;
+	background: url(/images/adminv/bg-tile_form-divider.gif) repeat-x 0 center;
+}
+	form .form-divider h1,
+	form .form-divider h2,
+	form .form-divider h3 {
+		background: #fff;
+		padding: 10px 10px 14px 10px;
+		display: inline-block;
+	}
 
 form li.help { margin-left: 145px; font-size: 90%; color: #777; }
 form .upload { margin-bottom: -5em;}
@@ -949,22 +1001,7 @@ form .controlset label {font-size: 11px; font-weight: normal !important; }
 
 /* @end */
 
-/* @group WYM Editor */
 
-.wym_box  { 
-	float: left;
-	display: block;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-	.wym_html { font-size: 12px; line-height: 16px; }
-	.wym_tools ul li { width: auto; }
-	.wym_skin_default .wym_dropdown ul { width: 135px; }
-	.wym_containers li a { font-size: 12px; }
-
-/* @end */
 
 
 /* @group CSS3 Buttons Overrides */

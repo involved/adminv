@@ -4,3 +4,58 @@
 	URL: https://github.com/jordan-lewis/adminv
 */
 
+
+header nav ul#site-menu { 
+	max-width: 800px;
+}
+
+
+
+/* @group CSS3 Buttons Overrides */
+
+	.block.actions .block-container .block-content .button.primary {
+	    border-color: #6b9640;
+	    border-bottom-color: #747d4a;
+	    text-decoration: none; 
+	    text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
+	    color: #fff; 
+	    background-color: #7bac4c;
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#aed36c), to(#7bac4c));
+	    background-image: -moz-linear-gradient(#aed36c, #7bac4c);
+	    background-image: -o-linear-gradient(#aed36c, #7bac4c);
+	    background-image: linear-gradient(#aed36c, #7bac4c);
+	    padding: 0.7em 1em;	
+	    font-size: 14px;
+	}
+	
+	.block.actions .block-container .block-content .button.primary:active,
+	.block.actions .block-container .block-content .button.primary.active {
+	    border-color: #2a65a0;
+	    border-bottom-color: #3884CF;
+	    color: #fff; 
+	    background-color: #3072b3;
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
+	    background-image: -moz-linear-gradient(#3072b3, #599bdc);
+	    background-image: -o-linear-gradient(#3072b3, #599bdc);
+	    background-image: linear-gradient(#3072b3, #599bdc);
+	}
+	
+	.block.actions .block-container .block-content .button.primary:hover {
+		background-color: #a2c581;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bddb89), to(#96bd71));
+		background-image: -moz-linear-gradient(#bddb89, #96bd71);
+		background-image: -o-linear-gradient(#bddb89, #96bd71);
+		background-image: linear-gradient(#bddb89, #96bd71);
+		-webkit-background-clip: padding;
+		-moz-background-clip: padding;
+		background-clip: padding-box;
+		-webkit-border-radius: 0.2em; 
+		-moz-border-radius: 0.2em; 
+		border-radius: 0.2em; 
+		border: 1px solid #9da480;
+		color: #fff;
+
+	}
+
+
+/* @end */

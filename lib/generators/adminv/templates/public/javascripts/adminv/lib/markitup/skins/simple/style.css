@@ -32,7 +32,7 @@
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;	
-			height: 320px;
+			height: 150px;
 			clear:both;
 			line-height:18px;
 			overflow:auto;
@@ -45,16 +45,16 @@
 			-moz-border-radius: 3px;
 			-webkit-border-radius: 3px;	
 			overflow:auto;
-			background-color:#eafde8	;
+			background-color:#eafde8;
 			width:99.9%;
 			height:300px;
 			margin:5px 0;
 		}
 		
 		.markItUpFooter {
-			width:100%;
-			position: absolute;
-			bottom: 2px;
+			width: 100%;
+			position: relative;
+			bottom: -2px;
 		}
 		
 			.markItUpResizeHandle {
