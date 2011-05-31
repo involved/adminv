@@ -7,5 +7,8 @@ module Adminv
         container.to_s
       end
     end
+	  def page_id(new_id)
+	    content_for(:page_id){ new_id }
+	  end
   end
 end
