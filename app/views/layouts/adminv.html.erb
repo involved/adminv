@@ -21,7 +21,7 @@
 	<%= javascript_include_tag "adminv/lib/modernizr-1.7.min" %>
   </head>
   
-  <body>
+  <body id="<%= content_for?(:page_id) ? yield(:page_id) : '' %>">
 	<div id="fb-root"></div>
 	<div id="wrapper">	
 		<header>
