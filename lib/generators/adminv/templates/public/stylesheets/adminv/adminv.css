@@ -78,11 +78,23 @@
 html, body { /*height: 100%;*/ }
 
 body{ background: url(../../images/adminv/bg-tile_page.gif) repeat; }
-#wrapper { /*height: 100%;*/ }
-	#main {	
-		margin-top: 40px; 
-		padding-bottom: 50px;
-	}	
+
+/* Sticky Footer */
+html, body { height: 100%; }
+	#wrapper { min-height: 100%; }
+		#main {
+			overflow: auto;
+			margin-top: 40px; 
+			padding-bottom: 50px;
+			padding-top: 5px;
+		}  /* must be same height as the footer */
+		footer {
+			position: relative;
+			margin-top: -50px; /* negative value of footer height */
+			height: 50px;
+			clear:both;
+		} 
+
 
 
 /* Container auto-clearfix */
@@ -428,7 +440,7 @@ header nav.sub ul#actions-menu {
 /* @group Footer */
 
 footer {
-	margin: 20px;	
+	/*margin: 20px;	*/
 }
 
 /* @end */
@@ -439,6 +451,32 @@ footer {
 /* @group Block */
 
 .block { float: left; }
+
+	/* Login */
+	#login .grid_12 {
+		margin: 0px auto;
+		float: none;
+		width: 48.333333333333%;
+	}
+	
+	#login #main { margin-top: 120px; }
+	
+		#login form .block {
+			margin: 0px auto;
+			float: none;
+		}
+			#login form  .block-content {
+				padding-top: 40px;
+			}
+				#login form .block-content li.boolean {
+					margin-top: 10px;
+				}
+				
+				#login form .block-content .links {
+					float: left;
+					margin-top: 8px;
+				}
+	
 	/* Block Head */
 	.block-head {
 		float: left;
@@ -582,7 +620,7 @@ footer {
 				display: block;
 				float: right;
 				list-style: none;
-				margin: 2px 0px;
+				/*margin: 2px 0px;*/
 			}	
 				.block-toggles li { margin: 0px; }
 					.block-toggles a { float: left; }
@@ -604,11 +642,10 @@ footer {
 			float: left;
 			background: #F1F2F2;
 			border-top: 1px solid #CCCCCC;
-			
 			margin-top: 5px;
 		}
 		
-		.block-controls + .block-content {
+		.block-controls.floating {
 			border-bottom: 1px solid #CCCCCC;
 		}
 
@@ -679,13 +716,17 @@ form.block-form {
 	.table { 
 		display: table;
 		width: 100%; 
+		background: #fff;
 	}
 		.table:before, .container:after { content: "\0020"; display: block; height: 0; visibility: hidden; } 
 		.table:after { clear: both; }
 	
 	
 		/* Table Header */
-		.table .header-group { display: table-header-group; }
+		.table .header-group { 
+			background: #fff;
+			display: table-header-group;
+		}
 			.table .header-group .row {
 				height: 28px;
 				background: url(/images/adminv/ui-bg_table_header.png) repeat-x 0 bottom !important;
@@ -947,10 +988,13 @@ form {
 			form span { padding-left: 20px; }
 
 			form li.boolean { position: relative; }
-				form li.boolean label { margin-left: 0px; } 
+				form li.boolean label { 
+					margin-left: 0px;
+					width: auto;
+				} 
 				form li.boolean input { 
 					position: relative;
-					right: -80px;
+					/*right: -80px;*/
 				}
 
 form .form-divider {
@@ -981,14 +1025,14 @@ form .uploader { margin-bottom: .5em !important; }
 
 
 /* Label top styles (DEFAULT) */
-li label { width: 100%; text-align: left; padding-bottom: 4px; }
-li.boolean label { margin-left: -12px; } 
-li span.label { width: 100%;  text-align: left; position: relative; }
+form li label { width: 100%; text-align: left; padding-bottom: 4px; }
+form li.boolean label { margin-left: -12px; } 
+form li span.label { width: 100%;  text-align: left; position: relative; }
 
 /* Inline-Label styles */
-.label-inline li label { width: 125px; text-align: right; }
-.label-inline li.boolean label { margin-left: 0px; } 
-.label-inline li span.label { margin-right: 10px; padding-right: 10px; }
+form.label-inline li label { width: 115px; text-align: right; }
+form.label-inline li.boolean label { margin-left: 0px; } 
+form.label-inline li span.label { margin-right: 10px; padding-right: 10px; }
 /*.label-inline li .field_help { margin-left: 0; font-size: 11px; }
 .label-inline .buttonrow { margin-left: 0; }
 .label-inline .selector { width: 100%; display: block; float: left; }*/
