@@ -1,7 +1,15 @@
 //@import 'bourbon';
 
 @import "defaults/reset";
-@import "defaults/grid";
+@import "defaults/mixins";
 @import "defaults/colors";
 @import "defaults/typography";
-@import "defaults/mixins";
+
+@import "ui/grid";
+@import "ui/blocks";
+@import "ui/tables";
+@import "ui/forms";
+@import "ui/tabs";
+@import "ui/notifications";
+@import "ui/accordions";
+@import "ui/datepicker";

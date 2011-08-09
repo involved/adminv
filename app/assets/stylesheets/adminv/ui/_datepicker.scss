@@ -1,4 +1,4 @@
-/* @group jQueryUI DatePicker */
+
 /*
  * jQuery UI Datepicker 1.8.11
  *
@@ -69,4 +69,14 @@
 }
 
 
+/* @group Custom */
+
+.ui-datepicker { 
+	background: #fff;
+	border: 2px #333 solid;
+}
+
 /* @end */
+
+
+
