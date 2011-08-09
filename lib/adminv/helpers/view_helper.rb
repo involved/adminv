@@ -6,6 +6,9 @@ module Adminv
         container.render(&block)
         container.to_s
       end
+      def page_id(new_id)
+        content_for(:page_id){ new_id }
+      end
     end
   end
 end

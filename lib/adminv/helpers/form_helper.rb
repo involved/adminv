@@ -4,7 +4,7 @@ module Adminv
       def add_remove_row(form, association, options={})
         options_add = options
         options_remove = options
-        options_add[:link_method] = :positive_add_pill_button_link_to
+        options_add[:link_method] = :add_pill_button_link_to
         options_remove[:link_method] = :negative_remove_pill_button_link_to
         button_group do
           add_row(form, association, options)
@@ -14,14 +14,14 @@ module Adminv
 
       def add_row(form, association, options={})
         options[:label] ||= "add"
-        options[:link_method] ||= :positive_add_button_link_to
+        options[:link_method] ||= :add_button_link_to
         options[:target] ||= ""
         new_child_fields_template(form, association, options) + send(options[:link_method], options[:label], "javascript:void(0)", :class => "add_remove_toggle add_row", :"data-association" => association, :"data-max-rows" => options[:max_rows], :"data-target" => options[:target])
       end
 
       def clone_row(form, association, target, options={})
         options[:label] ||= "add"
-        options[:link_method] ||= :positive_add_button_link_to
+        options[:link_method] ||= :add_button_link_to
         send(options[:link_method], options[:label], "javascript:void(0)", :class => "add_remove_toggle add_row", :"data-association" => association, :"data-max-rows" => options[:max_rows], :"data-template-target" => target)
       end
 

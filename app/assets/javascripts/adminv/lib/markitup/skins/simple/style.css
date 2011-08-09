@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------------
 // markItUp! Universal MarkUp Engine, JQuery plugin
 // By Jay Salvat - http://markitup.jaysalvat.com/
+// edited by Jordan Lewis - http://involved.com.au
 // ------------------------------------------------------------------*/
 .markItUp * {
 	margin:0px; padding:0px;
@@ -12,39 +13,59 @@
 	text-decoration:none;
 }
 .markItUp  {
-	width:700px;
+	width: 100%;
 	margin:5px 0 5px 0;
 }
-.markItUpContainer  {
-	font:11px Verdana, Arial, Helvetica, sans-serif;
-}
-.markItUpEditor {
-	font:12px 'Courier New', Courier, monospace;
-	padding:5px;
-	width:690px;
-	height:320px;
-	clear:both;
-	line-height:18px;
-	overflow:auto;
-}
-.markItUpPreviewFrame	{
-	overflow:auto;
-	background-color:#FFF;
-	width:99.9%;
-	height:300px;
-	margin:5px 0;
-}
-.markItUpFooter {
-	width:100%;
-}
-.markItUpResizeHandle {
-	overflow:hidden;
-	width:22px; height:5px;
-	margin-left:auto;
-	margin-right:auto;
-	background-image:url(images/handle.png);
-	cursor:n-resize;
-}
+	.markItUpContainer  {
+		font:11px Verdana, Arial, Helvetica, sans-serif;
+		position: relative;
+	}
+		.markItUpHeader {
+			margin-top: 5px;
+			float: left;
+		}
+		
+		.markItUpEditor {
+			font:12px 'Courier New', Courier, monospace;
+			padding:5px;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;	
+			height: 150px;
+			clear:both;
+			line-height:18px;
+			overflow:auto;
+			resize: none;
+		}
+		
+		.markItUpPreviewFrame{
+			border: 1px solid #CCCCCC;
+		    border: 1px solid #CCC;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;	
+			overflow:auto;
+			background-color:#eafde8;
+			width:99.9%;
+			height:300px;
+			margin:5px 0;
+		}
+		
+		.markItUpFooter {
+			width: 100%;
+			position: relative;
+			bottom: -2px;
+		}
+		
+			.markItUpResizeHandle {
+				overflow:hidden;
+				width:22px; height:5px;
+				margin-left:auto;
+				margin-right:auto;
+				background-image:url(images/handle.png);
+				cursor:n-resize;
+			}
+			
 /***************************************************************************************/
 /* first row of buttons */
 .markItUpHeader ul li	{
