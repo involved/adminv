@@ -1,5 +1,11 @@
 /* @group Sub Nav */
 
+header nav.sub{
+  @include clear-fix;
+  background: #f5f5f5;
+  border-bottom: #e1e1e1 1px solid; 
+}
+
 header nav.sub ul#secondary-menu {
 	float: left;
 	display: inline-block; 
