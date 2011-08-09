@@ -1,0 +1,51 @@
+
+/* @group Notification Bar */
+/** Common Styles **/
+
+#flash-message {
+	display:block;
+	padding:7px 7px 7px 30px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	position:relative;
+	border:1px solid;
+	margin-bottom: 25px;
+}
+
+	#flash-message a.close {
+		position:absolute;
+		top:0px;
+		right:7px;
+	}
+	
+	/** ie7 hack **/
+	*#flash-message a.close{ top:7px; }
+	
+/** Specific Notification Messages **/
+      
+ 
+#flash-message {
+	background: #dbe3ff url('adminv/ui-icon_information.png') 7px 8px no-repeat;
+	border-color: #a2b4ee !important;
+	color: #585b66;
+}     
+      
+#flash-message.warning {
+	background: #fffbcc url('adminv/ui-icon_error.png') 7px 8px no-repeat;
+	border-color: #E6DB55 !important;
+	color: #666452;
+}
+
+
+#flash-message.notice {
+	background: #d5ffce url('adminv/ui-icon_tick.png') 7px 8px no-repeat;
+	border-color: #9adf8f !important;
+	color: #556652;
+}
+
+#flash-message.error {
+	background: #ffcece url('adminv/ui-icon_exclamation.png') 7px 8px no-repeat;
+	border-color: #df8f8f !important;
+	color: #665252;
+}
+/* @end */

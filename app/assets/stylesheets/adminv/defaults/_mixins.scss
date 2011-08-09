@@ -1,0 +1,16 @@
+@mixin clear-fix {
+  &:before, &:after { content: "\0020"; display: block; height: 0; visibility: hidden;} 
+  &:after { clear: both; }
+  zoom: 1;
+}
+
+@mixin font-face($family, $url){
+  @font-face{
+    font-family: $family;
+    src:  url('#{$url}.eot');
+    src:  url('#{$url}.eot?#iefix') format('eot'),
+          url('#{$url}.woff') format('woff');
+    font-weight: normal;
+    font-family: normal;
+  }
+}

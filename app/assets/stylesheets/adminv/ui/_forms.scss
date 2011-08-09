@@ -1,0 +1,151 @@
+/* Form */
+form.block-form {
+	margin: 0px;
+	padding: 0px;	
+}
+	form.block-form .block-tabs li {
+		width: auto;
+		margin: 0px;
+	}
+
+	.block.table form,
+	form .table li { 
+		margin: 0px;
+		padding: 0px;
+	}
+
+
+
+
+
+
+
+
+/* Form reset */
+form, 
+form ul, 
+form ol, 
+form li, 
+form fieldset, 
+form legend, 
+form input, 
+form textarea, 
+form select, 
+form p {
+    margin: 0;
+    padding: 0;
+}
+
+form ol, 
+form ul {
+    list-style: none;
+}
+
+/* Form Defaults */
+form { 
+	padding: 0px; 
+	margin: 0px; 
+}
+
+	form li { 
+		width: 100%; 
+		float: left; 
+		display: block;
+		margin-bottom: 15px;
+	}
+		form label, 
+		form span.label { 
+			margin-right: 10px; 
+			padding-right: 10px;
+			display: block; 
+			float: left; 
+			font-weight: bold; 
+			position: relative;
+		}
+		form label em, 
+		form span.label em { 
+			position: absolute; 
+			right: 0; 
+			font-size: 120%; 
+			font-style: normal; 
+			color: #C00; 
+		}
+	
+		form li input,
+		form li textarea {
+			padding: 4px;
+			border: 1px solid #CCC;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+		}
+			form input:focus,
+			form input.error:focus, 
+			form textarea:focus {	background-color: #FFC; border-color: #FC6; }
+			
+			form .xsmall { width: 50px; }
+			form .small  { width: 100px; }
+			form .medium { width: 200px; }
+			form .large  { width: 300px; }
+			form .xlarge { 
+				width: 100%; 
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;		
+			}
+			form input.error { border: red 1px solid; background: #FFE1E3; }
+			form .error { color: red; }
+
+			form li.boolean { position: relative; }
+				form li.boolean label { margin-left: 0px; } 
+				form li.boolean input { 
+					position: relative;
+					right: -80px;
+				}
+
+
+form li.help { margin-left: 145px; font-size: 90%; color: #777; }
+form .upload { margin-bottom: -5em;}
+
+form .buttonrow { margin-left: 145px; display: block; }
+form .cancel { font-size: 11px; color: #C00; padding-left: 10px; }
+
+form .uploader { margin-bottom: .5em !important; }
+
+
+/* Label top styles (DEFAULT) */
+li label { width: 100%; text-align: left; padding-bottom: 4px; }
+li.boolean label { margin-left: -12px; } 
+li span.label { width: 100%;  text-align: left; position: relative; }
+
+/* Inline-Label styles */
+.label-inline li label { width: 125px; text-align: right; }
+.label-inline li.boolean label { margin-left: 0px; } 
+.label-inline li span.label { margin-right: 10px; padding-right: 10px; }
+/*.label-inline li .field_help { margin-left: 0; font-size: 11px; }
+.label-inline .buttonrow { margin-left: 0; }
+.label-inline .selector { width: 100%; display: block; float: left; }*/
+
+form div.controlset label, 
+form div.controlset input { display: inline; float: none; }
+form .controlset label {font-size: 11px; font-weight: normal !important; }
+.controlset { margin-bottom: 2.5em; float: left; }
+.controlset .controlset-pad { width: 300px; float: left;  }
+
+/* @end */
+
+/* @group WYM Editor */
+
+.wym_box  { 
+	float: left;
+	display: block;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	.wym_html { font-size: 12px; line-height: 16px; }
+	.wym_tools ul li { width: auto; }
+	.wym_skin_default .wym_dropdown ul { width: 135px; }
+	.wym_containers li a { font-size: 12px; }
+
+/* @end */

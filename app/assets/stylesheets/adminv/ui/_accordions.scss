@@ -1,0 +1,46 @@
+/* @group Table - Accordion */
+
+.table.accordion {}
+	.table.accordion.initialised .col {	float: left; }
+	.table.accordion.initialised .col.actions { float: right; }
+
+	.table.accordion .details { 
+		float: left;
+		width: 100%;
+		padding: 10px 20px 10px 20px;
+		margin: 0px;
+		background: #fffce5;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		display: none; /* hide by default */
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;		
+	}	
+	
+	.row.expanded .col.edit { 
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	
+		.row .date select {
+			float: left;
+			display: inline-block;
+		}
+
+		.table.accordion .details .table { float: none; }
+			.table.accordion .details .table li {
+				float: none;
+				display: table-row;
+			}
+				.table.accordion .details .table li label,
+				.table.accordion .details .table li input { 
+					display: table-cell;
+					float: none;
+					padding: 5px 0px;
+					width: auto;
+				}
+					.table.accordion .details .table li input { width: 100%; }
+	
+		
+/* @end */
