@@ -1,0 +1,53 @@
+!!!
+/[if lt IE 7] <html lang="en" class="no-js ie6">
+/[if IE 7 ] <html lang="en" class="no-js ie7">
+/[if IE 8 ] <html lang="en" class="no-js ie8">
+/[if IE 9 ] <html lang="en" class="no-js ie9">
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+%head
+  = render :partial => 'adminv/meta'
+  = csrf_meta_tag
+  %title
+    = h(content_for?(:title) ? yield(:title) : "Welcome")
+    = ": Adminv CMS template"
+
+  %link{:rel => "shortcut icon", :href => "/favicon.ico"}
+  %link{:rel => "apple-touch-icon", :href => "/apple-touch-icon.png"}
+  %link{:rel => "image_src", :href => "/facebook-icon.png"}
+
+  = stylesheet_link_tag 'adminv'
+  = render :partial => "adminv/javascripts_header"
+  
+%body{:id => content_for?(:body_id) ? yield(:body_id) : ""}
+
+  %header
+    #top-bar
+      .container
+        .grid_12
+          = render :partial => 'adminv/header'
+          = render :partial => 'adminv/user'
+
+    %nav.main
+      .container
+        .grid_12
+          = render :partial => 'adminv/primary_navigation'
+    
+    - unless render(:partial => 'adminv/secondary_navigation').blank?
+      %nav.sub
+        .container
+          .grid_12
+            = render :partial => 'adminv/secondary_navigation'
+
+    #main.container
+      - flash.each do |name, message|
+        = content_tag :div, :class => "grid_12" do
+          = content_tag :div, render(:partial => "adminv/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
+
+      = render :partial => "adminv/content"
+
+  %footer
+    .container
+      .grid_12
+        = render :partial => "adminv/footer"
+
+  = render :partial => "adminv/javascripts_footer"
