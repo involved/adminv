@@ -96,7 +96,7 @@ header {
 }
 	header #top-bar {
 		min-height: 60px;
-		background: #5D6868 url(/images/adminv/header-bg.gif) repeat-x 0 bottom;
+		background: #5D6868 url(adminv/header-bg.gif) repeat-x 0 bottom;
 		border-bottom: #251f24 1px solid;
 		padding-top: 10px;
 	}
@@ -215,9 +215,9 @@ header nav ul#settings-menu {
 			display: block;
 			padding: 5px 15px;
 		}
-		header nav #settings-menu li.account a 	{ background: url(/images/adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
-		header nav #settings-menu li.settings a { background: url(/images/adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
-		header nav #settings-menu li.logout  a	{ background: url(/images/adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; }
+		header nav #settings-menu li.account a 	{ background: url(adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
+		header nav #settings-menu li.settings a { background: url(adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
+		header nav #settings-menu li.logout  a	{ background: url(adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; }
 		
 /* @end */
 
@@ -442,7 +442,7 @@ footer {
 		box-sizing: border-box;		
 	}
 		.block-head a.back {
-			background: url("/images/adminv/ui-icon_back-arrow.png") no-repeat scroll 0 50% transparent;
+			background: url("adminv/ui-icon_back-arrow.png") no-repeat scroll 0 50% transparent;
  			padding-left: 12px;
  			color: #4183C4;
 			text-decoration: none;
@@ -634,7 +634,7 @@ form.block-form {
 		.table .header-group { display: table-header-group; }
 			.table .header-group .row {
 				height: 28px;
-				background: url(/images/adminv/ui-bg_table_header.png) repeat-x 0 bottom !important;
+				background: url(adminv/ui-bg_table_header.png) repeat-x 0 bottom !important;
 				padding: 0px;
 				line-height: 28px;
 			}
@@ -708,7 +708,7 @@ form.block-form {
 							
 						/* Table Sortable */		
 						.table .row .col.sort-handle { 
-							background: url(/images/adminv/ui-icon_sortable.png) no-repeat center 10px; 
+							background: url(adminv/ui-icon_sortable.png) no-repeat center 10px; 
 							cursor: move;
 							height: 20px;
 							width: 20px;
@@ -1063,26 +1063,26 @@ form .controlset label {font-size: 11px; font-weight: normal !important; }
       
  
 #flash-message {
-	background: #dbe3ff url('/images/adminv/ui-icon_information.png') 7px 8px no-repeat;
+	background: #dbe3ff url('adminv/ui-icon_information.png') 7px 8px no-repeat;
 	border-color: #a2b4ee !important;
 	color: #585b66;
 }     
       
 #flash-message.warning {
-	background: #fffbcc url('/images/adminv/ui-icon_error.png') 7px 8px no-repeat;
+	background: #fffbcc url('adminv/ui-icon_error.png') 7px 8px no-repeat;
 	border-color: #E6DB55 !important;
 	color: #666452;
 }
 
 
 #flash-message.notice {
-	background: #d5ffce url('/images/adminv/ui-icon_tick.png') 7px 8px no-repeat;
+	background: #d5ffce url('adminv/ui-icon_tick.png') 7px 8px no-repeat;
 	border-color: #9adf8f !important;
 	color: #556652;
 }
 
 #flash-message.error {
-	background: #ffcece url('/images/adminv/ui-icon_exclamation.png') 7px 8px no-repeat;
+	background: #ffcece url('adminv/ui-icon_exclamation.png') 7px 8px no-repeat;
 	border-color: #df8f8f !important;
 	color: #665252;
 }
