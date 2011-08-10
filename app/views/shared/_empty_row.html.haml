@@ -1,0 +1,5 @@
+.block-content
+  - if !defined?(name) || name.nil?
+    No results.
+  - else
+    = "There are currently no #{name} to display."

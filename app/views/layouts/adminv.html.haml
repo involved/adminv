@@ -16,7 +16,7 @@
   %link{:rel => "image_src", :href => "/facebook-icon.png"}
 
   = stylesheet_link_tag 'adminv'
-  = render :partial => "adminv/javascripts_header"
+  = render :partial => "shared/javascripts_header"
   
 %body{:id => content_for?(:body_id) ? yield(:body_id) : ""}
   #wrapper
@@ -41,9 +41,9 @@
     #main.container
       - flash.each do |name, message|
         = content_tag :div, :class => "grid_12" do
-          = content_tag :div, render(:partial => "adminv/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
+          = content_tag :div, render(:partial => "shared/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
 
-      = render :partial => "adminv/content"
+      = render :partial => "shared/content"
 
     %footer
       .container

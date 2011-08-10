@@ -11,16 +11,16 @@ module Adminv
       end
 
       def back_block
-        render :partial => 'manage/shared/back'
+        render :partial => 'shared/back'
       end
 
       def sidebar_right(resource = nil)
-        render :partial => 'manage/shared/sidebar_right', :locals => {:resource_class => resource.class, :resource => resource}
+        render :partial => 'shared/sidebar_right', :locals => {:resource_class => resource.class, :resource => resource}
       end
 
       def empty_row(collection, name, &block)
         # should capture the block and inject into the front of the button group aswell?
-        render :partial => 'manage/shared/empty_row', :locals => {:name => name} if collection.empty?
+        render :partial => 'shared/empty_row', :locals => {:name => name} if collection.empty?
       end
 
       def avatar_url(user, options = {})

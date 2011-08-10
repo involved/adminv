@@ -1,5 +1,4 @@
-- if content_for? :sidebar
+- if content_for? :sidebar_left
   = adminv_container :width => :sidebar, :class => 'sidetabs' do |container|
     = container.content do |content|
-      = yield :sidebar 
-= yield 
+      = yield :sidebar_left

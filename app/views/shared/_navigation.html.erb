@@ -1,0 +1,14 @@
+<ul id="nav">
+	<li>Pages
+		<ul>
+			<li class="<%= navigation_class_for_re(/^\/manage\/promos(\?.*)?$/) %>"><%= link_to t('manage.header.navigation.home'), manage_promos_path  %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/users(\?.*)?$/) %>"><%= link_to t('manage.header.navigation.users'), manage_users_path %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/releases(\?.*)?$/) %>"><%= link_to t('manage.header.navigation.releases'), manage_releases_path %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/events(\?.*)?$/) %>"><%= link_to t('manage.header.navigation.events'), manage_events_path %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/news_posts(\?.*)?$/) %>"><%= link_to t('manage.header.navigation.news_posts'), manage_news_posts_path %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/flickr_photosets(\?.*)?$/) %>"><%= navigation_link_to t('manage.header.navigation.flickr_photosets'), manage_flickr_photosets_path %></li>
+			<li class="<%= navigation_class_for_re(/^\/manage\/education(\?.*)?$/) %>"><%= navigation_link_to t('manage.header.navigation.education'), manage_education_index_path %></li>
+		</ul>
+	</li>
+	<li class="<%= navigation_class_for_re(/^\/manage\/downloads(\?.*)?$/) %>"><%= navigation_link_to t('manage.header.navigation.downloads'), manage_downloads_path %></li>
+</ul>

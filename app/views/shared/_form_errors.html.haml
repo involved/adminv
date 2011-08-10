@@ -1,0 +1,6 @@
+- if resource.errors.any?
+  #errorExplanation
+    %h3= "#{pluralize(resource.errors.count, "error")} prevented this from being saved:"
+    %ul
+      - resource.errors.full_messages.each do |message|
+        %li= message

@@ -1,0 +1,3 @@
+.block-head.grid_9
+  - if resource_class
+    = link_to "Back to #{resource_class.name.tableize.humanize.downcase} list", send(:"manage_#{resource_class.name.tableize}_path"), :class => :back
