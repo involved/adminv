@@ -1,4 +1,4 @@
-# Adminv - adminstrative layouts made easy
+# Adminv - administrative layouts made easy
 
 Adminv is an administrative layout for Rails, which includes view helpers to make creating usable and pretty administrative console views a snap.
 
@@ -12,15 +12,10 @@ from the fruits of our labour.
 Start by adding the gem to your `gemfile`:
 
     gem 'adminv'
-		
-__Manual Dependency__ (Until gem is fixed):  
-
-    gem 'css3buttons', '0.9.4'
 
 Then you can run the generators to create the public assets:
 
     $ rails g adminv:install
-    $ rails g css3buttons
 
 This will add some images, stylesheets and javascripts to your `/public`
 directory. In addition, some view partials will be created under
@@ -34,8 +29,8 @@ future updates we make, won't disturb your stuff (unless you want it to).
 
 # Why is there no layout?
 
-The idea with adminv was to remove as much of the work as possible from
-creating an adminstrative console. As such, all the core structure for
+The idea with Adminv was to remove as much of the work as possible from
+creating an administrative console. As such, all the core structure for
 the layout is actually kept inside the gem, and the partials in
 `app/views/adminv` are how you can manage the content in each of the key
 spaces.
