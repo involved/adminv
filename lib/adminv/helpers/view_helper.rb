@@ -6,6 +6,17 @@ module Adminv
         container.render(&block)
         container.to_s
       end
+      
+      # sets the page title
+      def title(page_title, page_subtitle = nil)
+        content_for(:title) { page_title }
+        subtitle(page_subtitle) if page_subtitle
+      end
+
+      def subtitle(page_title)
+        content_for(:subtitle) {page_title}
+      end
+      
       def page_id(new_id)
         content_for(:page_id){ new_id }
       end
