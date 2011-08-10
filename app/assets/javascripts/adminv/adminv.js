@@ -2,14 +2,15 @@
 	Name: Adminv
 	URL: https://github.com/jordan-lewis/adminv
 	Description: Simple and Clean HTML5 Rails-3 CMS Template.
-	Version: 0.0.2
+	Version: 0.1.0
 	Author: Jordan Lewis - https://github.com/jordan-lewis
-	Authod: Nicholas Bruning - https://github.com/thetron
+	Author: Nicholas Bruning - https://github.com/thetron
 */
 
 var Adminv = function() {
 
   function init() {
+    updateNoJS();
     ajaxCSRFToken();
     initTables();
     bindAccordions();
@@ -27,6 +28,14 @@ var Adminv = function() {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
       }
     });
+  }
+
+  function initTypography(){
+    loadCustomWebFonts(['BertholdAkzidenzGroteskBEMd'], ['/stylesheets/fonts.css']);
+  }
+
+  function updateNoJS(){
+    $('.no-js').removeClass('.no-js').addClass('js');
   }
 
   function initTables() {
@@ -184,9 +193,13 @@ var Adminv = function() {
 
 }();
 
-/*
-* jQuery DOM ready handler
-*/
-$(document).ready(function(){
-  Adminv.init();	
+Modernizr.load({
+  load: ['http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'],
+  complete: function(){
+    //Adminv.initTypography();
+    Modernizr.load({
+      load: ['https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'],
+      complete: Adminv.init
+    });
+  }
 });
