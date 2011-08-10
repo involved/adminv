@@ -15,7 +15,7 @@ var Adminv = function() {
     initTables();
     bindAccordions();
     bindTabs();
-    bindMarkdownEditor();
+    //bindMarkdownEditor();
     handleRemoveRowLinks();
     handleAddRowLinks();
     bindTableSorter();

@@ -9,7 +9,7 @@ module Adminv
         @template = template
         @options = args.extract_options!
         extract_html_options!
-        @heading = args.first
+        @heading = args.first.is_a?(Array) ? args.first.first : args.first
         @toggles = []
       end
 

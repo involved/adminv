@@ -9,7 +9,7 @@ module Adminv
         @tab_id = ActiveSupport::SecureRandom.hex(4)
         @options = args.extract_options!
         extract_html_options!
-        @title = args.first
+        @title = args.first.is_a?(Array) ? args.first.first : args.first
       end
 
       def header(*args, &block)

@@ -1,12 +1,15 @@
 /* Form */
-form.block-form {
+.block-form {
 	margin: 0px;
 	padding: 0px;	
-}
-	form.block-form .block-tabs li {
+	.block-tabs li {
 		width: auto;
 		margin: 0px;
 	}
+
+	
+}
+
 
 	.block.table form,
 	form .table li { 
