@@ -38,12 +38,12 @@
             .grid_12
               = render :partial => 'adminv/secondary_navigation'
 
-      #main.container
-        - flash.each do |name, message|
-          = content_tag :div, :class => "grid_12" do
-            = content_tag :div, render(:partial => "adminv/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
+    #main.container
+      - flash.each do |name, message|
+        = content_tag :div, :class => "grid_12" do
+          = content_tag :div, render(:partial => "adminv/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
 
-        = render :partial => "adminv/content"
+      = render :partial => "adminv/content"
 
     %footer
       .container

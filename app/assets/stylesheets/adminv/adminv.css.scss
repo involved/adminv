@@ -21,6 +21,7 @@ html{
       @import "includes/footer";
     
       #main{
+        @include clear-fix;
         margin-top: 40px; 
 		    padding-bottom: 50px;
       }
