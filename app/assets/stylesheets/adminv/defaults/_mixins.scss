@@ -14,3 +14,29 @@
     font-family: normal;
   }
 }
+
+
+/* Tables */
+
+@mixin rowgroup{
+  width: 100%; 
+  margin: 0px; 
+  padding: 0px; 
+  display: table-row-group;
+}
+
+@mixin row{
+  display: table-row;
+  width: 100%;
+  min-height: 20px;
+  line-height: 20px;
+  padding: 0px;
+  margin: 0px;
+}
+
+@mixin col{
+  margin: 0px;
+  padding: 5px 10px;
+  display: table-cell; 
+  vertical-align: middle;
+}
