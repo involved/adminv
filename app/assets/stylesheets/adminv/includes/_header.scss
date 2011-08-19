@@ -8,7 +8,9 @@ header{
 		border-bottom: #251f24 1px solid;
 		padding-top: 10px;
 		h1{
-    	font-size: 40px; color: #ecf1f1; font-weight: bold;
+    	font-size: 40px; 
+      color: #ecf1f1;
+      font-weight: bold;
     	text-decoration: none;
     	text-shadow: 0px -1px 0px #000;	
     	float: left;
@@ -32,9 +34,9 @@ header{
       dd.role{ font-size: 11px; }
       dt { padding-top: 10px; }
       dd.gravatar{
+        @include box-shadow(0 1px 3px #333);
         position: absolute;
         left: -65px;
-        -moz-box-shadow: 0 1px 3px #333;
         border: #999 1px solid;
         background: #fff;
         padding: 0px;
@@ -47,11 +49,10 @@ header{
 	
 	nav{
     @include clear-fix;
-    background: #006D91; /* old browsers */
-    background: -moz-linear-gradient(top, #006D91 0%, #006086 99%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006D91), color-stop(99%,#006086)); /* webkit */
+    @include linear-gradient(#006D91, #006086);
     border-bottom: #000 1px solid;
-    ul, li{
+    ul, 
+    li{
       float: left;
       display: inline-block;
     }
@@ -75,26 +76,20 @@ header{
     			display: inline-block;
     			padding: 6px 10px;
     			&:hover{
-            padding: 5px 10px;
-    				background: #074e69; /* old browsers */
-    				background: -moz-linear-gradient(top, #065471 0%, #0c5773 99%); /* firefox */
-    				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#065471), color-stop(99%,#0a5a78)); 
+            @include linear-gradient(#065471, #0c5773);
+            @include border-radius(2px);
     				border-top: #074e69 1px solid;
-    				border-bottom: #186a88 1px solid;			
-    				-moz-border-radius: 2px;
-    				border-radius: 2px; 
+    				border-bottom: #186a88 1px solid;
+    				padding: 5px 10px;
     			}
     		}
         &.active a,
         &.active a:hover{
+   				@include border-radius(2px);
+  				@include linear-gradient(#0f3545, #184d5f);	
           padding: 5px 10px;
   				border-top: #074e69 1px solid;
   				border-bottom: #3d7589 1px solid;		
-  				-moz-border-radius: 2px;
-  				border-radius: 2px; 
-  				background: #0f3545; /* old browsers */
-  				background: -moz-linear-gradient(top, #0f3545 0%, #184d5f 99%); /* firefox */
-  				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0f3545), color-stop(99%,#184d5f)); 	
         }
     	}
     }
@@ -106,16 +101,16 @@ header{
       height: 29px;
       padding: 11px 0px 8px 0px;
       li { 
+        @include border-radius(5px);
+        @include box-shadow(0 1px 0 0 #489cb8 inset);
+        @include linear-gradient(#007ca1, #00668e);	
         float: left;
         display: inline-block;
         margin-left: 10px;
-        border-radius: 5px; 
-        -moz-border-radius: 5px;
-        -moz-box-shadow: 0 1px 0 0 #489cb8 inset;
-        border: #004a66 1px solid;
-        background: #007ca1; 
-        background: -moz-linear-gradient(top, #007ca1 0%, #00668e 99%); 
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007ca1), color-stop(99%,#00668e)); 
+        border: darken(#004a66, 2%) 1px solid;
+        &:hover{
+          @include linear-gradient(darken(#007ca1, 2%), darken(#00668e, 2%));	
+        }
         a {
           display: block;
           padding: 5px 15px;
