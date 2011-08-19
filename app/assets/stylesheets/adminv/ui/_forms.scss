@@ -2,99 +2,104 @@
 .block-form {
 	margin: 0px;
 	padding: 0px;	
-	.block-tabs li {
-		width: auto;
-		margin: 0px;
-	}
 
-	
+  form{
+    margin: 0px;
+	  padding: 0px;
+	  ol, 
+	  ul {
+      list-style: none;  
+		  li{
+      	width: 100%; 
+      	float: left; 
+      	display: block;
+      	margin-bottom: 15px;
+      	
+      	input,
+      	textarea {
+    			padding: 4px;
+    			border: 1px solid #CCC;
+    			-moz-border-radius: 3px;
+    			-webkit-border-radius: 3px;
+          
+          &.error{
+            border: red 1px solid; 
+            background: #FFE1E3; 
+            color: red;
+          }
+            
+          &:focus,
+          &.error:focus{
+            background-color: #FFC; 
+            border-color: #FC6;
+          }
+          
+          &.xsmall{ width: 50px; }
+          &.small{  width: 100px; }
+          &.medium{ width: 200px; }
+          &.large{  width: 300px; }
+          &.xlarge { 
+            width: 100%; 
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;		
+          }            
+    		}
+    		
+    		label, 
+    		.label{
+          margin-right: 10px; 
+          padding-right: 10px;
+          display: block; 
+          float: left; 
+          font-weight: bold; 
+          position: relative; 
+		      em{
+      			position: absolute; 
+      			right: 0; 
+      			font-size: 120%; 
+      			font-style: normal; 
+      			color: #C00;
+    			}
+    		}    		
+		  }
+	  }
+  }
+  
 }
 
 
-	.block.table form,
-	form .table li { 
-		margin: 0px;
-		padding: 0px;
-	}
 
 
 
 
 
 
+/* Legacy */
 
-
-/* Form reset */
-form, 
-form ul, 
-form ol, 
-form li, 
-form fieldset, 
-form legend, 
-form input, 
-form textarea, 
-form select, 
-form p {
-    margin: 0;
-    padding: 0;
+.block.table form,
+form .table li { 
+	margin: 0px;
+	padding: 0px;
 }
 
-form ol, 
-form ul {
-    list-style: none;
-}
+  /* Form reset */
+  form, 
+  form ul, 
+  form ol, 
+  form li, 
+  form fieldset, 
+  form legend, 
+  form input, 
+  form textarea, 
+  form select, 
+  form p {
+      margin: 0;
+      padding: 0;
+  }
+  
 
-/* Form Defaults */
-form { 
-	padding: 0px; 
-	margin: 0px; 
-}
-
-	form li { 
-		width: 100%; 
-		float: left; 
-		display: block;
-		margin-bottom: 15px;
-	}
-		form label, 
-		form span.label { 
-			margin-right: 10px; 
-			padding-right: 10px;
-			display: block; 
-			float: left; 
-			font-weight: bold; 
-			position: relative;
-		}
-		form label em, 
-		form span.label em { 
-			position: absolute; 
-			right: 0; 
-			font-size: 120%; 
-			font-style: normal; 
-			color: #C00; 
-		}
-	
-		form li input,
-		form li textarea {
-			padding: 4px;
-			border: 1px solid #CCC;
-			-moz-border-radius: 3px;
-			-webkit-border-radius: 3px;
-		}
-			form input:focus,
-			form input.error:focus, 
-			form textarea:focus {	background-color: #FFC; border-color: #FC6; }
-			
-			form .xsmall { width: 50px; }
-			form .small  { width: 100px; }
-			form .medium { width: 200px; }
-			form .large  { width: 300px; }
-			form .xlarge { 
-				width: 100%; 
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;		
-			}
+		
 			form input.error { border: red 1px solid; background: #FFE1E3; }
 			form .error { color: red; }
 
