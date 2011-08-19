@@ -37,6 +37,28 @@ html{
 	padding: 0.5em 1.7em 0.5em 1.2em;
 }
 
+.button{
+  &.safe{
+    @include linear-gradient(#aed36c, #7bac4c);
+    color: #fff;
+  	border-color: #6b9640;
+  	border-bottom-color: #747d4a;
+  	text-decoration: none; 
+  	text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
+    &:hover,
+    &:focus{
+      @include linear-gradient(#bddb89, #96bd71);
+    }      
+    
+    &:active,
+    &.active{
+      @include linear-gradient(#96bd71, #bddb89);
+    }
+  }
+}
+
+
+
 
 /* @end */
 
