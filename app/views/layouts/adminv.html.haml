@@ -21,11 +21,13 @@
 %body{:id => content_for?(:body_id) ? yield(:body_id) : ""}
 
   %header
-    .container
-      = render :partial => 'adminv/header'
-      = render :partial => 'adminv/user'
+    .top-bar
+      .container
+        %hgroup
+          = render :partial => 'adminv/header'
+        = render :partial => 'adminv/user'
       
-    %nav.primary
+    %nav
       .container
         = render :partial => 'adminv/primary_navigation'
 
