@@ -1,29 +1,27 @@
 header{
-	width: 100%;
+  width: 100%;
 	display: block;
-	
-  #top-bar{
-		min-height: 60px;
-		background: #5D6868 url(adminv/header-bg.gif) repeat-x 0 bottom;
-		border-bottom: #251f24 1px solid;
-		padding-top: 10px;
-		h1{
+	min-height: 60px;
+	background: #5D6868 url(adminv/header-bg.gif) repeat-x 0 bottom;
+	padding-top: 10px;
+  
+  .container{
+    @include grid-page;
+  	h1{
+      @include grid-column(9);
     	font-size: 40px; 
       color: #ecf1f1;
       font-weight: bold;
     	text-decoration: none;
     	text-shadow: 0px -1px 0px #000;	
-    	float: left;
     }
-		
-    .account{
-  		float: right;
-  		display: inline-block;
-  		position: relative;
-  		min-width: 172px;
+  	
+    > .account{
+      @include grid-column(3);
+      position: relative;
   		font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; font-size: 12px; color: #fff; font-weight: bold;
       text-shadow: 0px 2px 3px #333;
-      span { color: #c5c4c4 }
+      span{ color: #c5c4c4 }
       dt, 
       dd.role{
         float: left;
@@ -32,7 +30,7 @@ header{
   			padding-top: 4px;
       }
       dd.role{ font-size: 11px; }
-      dt { padding-top: 10px; }
+      dt{ padding-top: 10px; }
       dd.gravatar{
         @include box-shadow(0 1px 3px #333);
         position: absolute;
@@ -43,82 +41,82 @@ header{
         margin: 0px;
         font-size: 0px;
         img{ width: 50px; }
-		  }
+  	  }
     }
-	}
+  }
+	
 	
 	nav{
-    @include clear-fix;
+    width: 100%;
     @include linear-gradient(#006D91, #006086);
     border-bottom: #000 1px solid;
-    ul, 
-    li{
-      float: left;
-      display: inline-block;
-    }
-    a{
-      font-size: 12px; color: #fff; line-height: 16px; font-weight: bold;
-      text-decoration: none;
-      text-shadow: 0px 2px 3px #333;	
-    }
-		
-		#site-menu { 
-    	max-width: 785px;
-    	display: inline-block;
-    	list-style: none;
-    	height: 29px;
-    	padding: 11px 0px 8px 0px;
-    	li { 
-    		float: left;
-    		display: inline-block;
-    		margin-right: 10px;
-    		a {
-    			display: inline-block;
-    			padding: 6px 10px;
-    			&:hover{
-            @include linear-gradient(#065471, #0c5773);
-            @include border-radius(2px);
-    				border-top: #074e69 1px solid;
-    				border-bottom: #186a88 1px solid;
-    				padding: 5px 10px;
-    			}
-    		}
-        &.active a,
-        &.active a:hover{
-   				@include border-radius(2px);
-  				@include linear-gradient(#0f3545, #184d5f);	
-          padding: 5px 10px;
-  				border-top: #074e69 1px solid;
-  				border-bottom: #3d7589 1px solid;		
+    
+    .container{
+      @include grid-page;
+      ul{
+        list-style: none;
+        height: 29px;
+       	padding: 11px 0px 8px 0px;
+        li{
+          float: left;
+          display: inline-block;
+          a{
+            display: block;
+            font-size: 12px; 
+            color: #fff; 
+            line-height: 16px; 
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 0px 2px 3px #333;	
+          }
         }
-    	}
-    }
-
-    #settings-menu{
-      float: right;
-      display: inline-block; 
-      list-style: none;
-      height: 29px;
-      padding: 11px 0px 8px 0px;
-      li { 
-        @include border-radius(5px);
-        @include box-shadow(0 1px 0 0 #489cb8 inset);
-        @include linear-gradient(#007ca1, #00668e);	
-        float: left;
-        display: inline-block;
-        margin-left: 10px;
-        border: darken(#004a66, 2%) 1px solid;
-        &:hover{
-          @include linear-gradient(darken(#007ca1, 2%), darken(#00668e, 2%));	
+        
+        &#site-menu{ 
+        	@include grid-column(9);
+        	li{ 
+        		margin-right: 10px;
+        		a{
+        			padding: 6px 10px;
+        			&:hover{
+                @include linear-gradient(#065471, #0c5773);
+                @include border-radius(2px);
+        				border-top: #074e69 1px solid;
+        				border-bottom: #186a88 1px solid;
+        				padding: 5px 10px;
+        			}
+        		}
+            &.active a,
+            &.active a:hover{
+       				@include border-radius(2px);
+      				@include linear-gradient(#0f3545, #184d5f);	
+              padding: 5px 10px;
+      				border-top: #074e69 1px solid;
+      				border-bottom: #3d7589 1px solid;		
+            }
+        	}
         }
-        a {
-          display: block;
-          padding: 5px 15px;
-          text-shadow: 0px 2px 3px #003f5a;
+    
+        &#settings-menu{
+          @include grid-column(3);
+          li{ 
+            @include border-radius(5px);
+            @include box-shadow(0 1px 0 0 #489cb8 inset);
+            @include linear-gradient(#007ca1, #00668e);	
+            float: left;
+            margin-left: 10px;
+            border: darken(#004a66, 2%) 1px solid;
+            &:hover{
+              @include linear-gradient(darken(#007ca1, 2%), darken(#00668e, 2%));	
+            }
+            a{
+              padding: 5px 15px;
+              text-shadow: 0px 2px 3px #003f5a;
+            }
+            &.account a { background: url(adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
+            &.settings a{ background: url(adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
+            &.logout a	{ background: url(adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; } 
+          }
         }
-        &.account a  { background: url(adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
-        &.settings a { background: url(adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
-        &.logout a	 { background: url(adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; } 
       }
     }
   }

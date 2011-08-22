@@ -19,35 +19,26 @@
   = render :partial => "shared/javascripts_header"
   
 %body{:id => content_for?(:body_id) ? yield(:body_id) : ""}
-  #wrapper
-    %header
-      #top-bar
-        .container
-          .grid_12
-            = render :partial => 'adminv/header'
-            = render :partial => 'adminv/user'
 
-      %nav.main
-        .container
-          .grid_12
-            = render :partial => 'adminv/primary_navigation'
-    
-      - unless render(:partial => 'adminv/secondary_navigation').blank?
-        %nav.sub
-          .container
-            .grid_12
-              = render :partial => 'adminv/secondary_navigation'
-
-    #main.container
-      - flash.each do |name, message|
-        = content_tag :div, :class => "grid_12" do
-          = content_tag :div, render(:partial => "shared/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
-
-      = render :partial => "shared/content"
-
-    %footer
+  %header
+    .container
+      = render :partial => 'adminv/header'
+      = render :partial => 'adminv/user'
+      
+    %nav.primary
       .container
-        .grid_12
-          = render :partial => "adminv/footer"
+        = render :partial => 'adminv/primary_navigation'
 
-    = render :partial => "adminv/javascripts_footer"
+  #main.container
+    - flash.each do |name, message|
+      = content_tag :div, :class => "grid_12" do
+        = content_tag :div, render(:partial => "shared/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
+
+    = render :partial => "shared/content"
+
+  %footer
+    .container
+      .grid_12
+        = render :partial => "adminv/footer"
+
+  = render :partial => "adminv/javascripts_footer"

@@ -7,7 +7,7 @@
  & Gutter %: 20% 
  & MinWidth: 960px
  & MaxWidth: 1200px
- */
+ 
 .grid_1 { width: 6.6666666666667%; }
 .grid_2 { width: 15%; }
 .grid_3 { width: 23.333333333333%; }
@@ -53,3 +53,83 @@
 		text-align: center;
 		padding: 10px;
 	}
+
+*/
+
+
+/////////
+// 1kb grid system
+// http://heygrady.com/blog/2011/02/17/using-sass-with-the-1kb-grid-system/
+
+
+
+
+// Configuration
+$column-width: 80px;
+$gutter-width: 20px;
+$columns: 12;
+
+// Column Widths
+@mixin grid($i) {
+   width: $column-width * $i + $gutter-width * ($i - 1);
+}
+@mixin grid-plus($i, $plus) {
+   width: $column-width * $i + $gutter-width * ($i - 1) + $plus;
+}
+@for $i from 1 through $columns {
+  .grid-#{$i} { @include grid($i); }
+}
+
+// Page, Row, Column
+@mixin grid-page($i: $columns) {
+  @extend .clearfix;
+   width: $column-width * $i + $gutter-width * $i;
+  margin: 0 auto;
+}
+@mixin grid-row($page: false) {
+  @extend .clearfix;
+  width: auto;
+  
+  // rows directly inside a page don't need the negative margin
+  @if $page {
+    margin: 0 0;
+  } @else {
+    margin: 0 (-$gutter-width / 2);
+    }
+}
+@mixin grid-column($i: false) {
+  margin: 0 ($gutter-width / 2);
+  float: left;
+  .ie6 & { display: inline; }
+  
+  @if $i {
+    @include grid($i);
+  }
+}
+@mixin grid-column-empty($i: 1, $position: after) {
+  $margin: $column-width * $i + $gutter-width * $i + ($gutter-width / 2);
+  
+  @if $position == after {
+    margin-right: $margin;
+  } @else {
+    margin-left: $margin;
+  }
+}
+
+.page {
+  @include grid-page;
+}
+.row {
+  @include grid-row;
+}
+.page > .row {
+  margin: 0;
+} 
+.column {
+  @include grid-column;
+}
+
+// Box
+.box {
+  margin-bottom: $gutter-width;
+}
