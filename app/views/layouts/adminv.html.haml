@@ -33,14 +33,12 @@
 
   #main.container
     - flash.each do |name, message|
-      = content_tag :div, :class => "grid_12" do
-        = content_tag :div, render(:partial => "shared/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
+      = content_tag :div, render(:partial => "shared/flash", :locals => {:message => message}), :id => "flash-message", :class => "#{name}"
 
     = render :partial => "shared/content"
 
   %footer
     .container
-      .grid_12
-        = render :partial => "adminv/footer"
+      = render :partial => "adminv/footer"
 
   = render :partial => "adminv/javascripts_footer"

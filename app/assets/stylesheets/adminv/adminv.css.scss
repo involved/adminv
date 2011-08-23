@@ -18,6 +18,10 @@ html{
     @import "includes/sidetabs";
     @import "includes/footer";
   
+    .container{
+      @include grid-page;
+    }
+  
     #main{
       @include clear-fix;
       margin-top: 40px; 

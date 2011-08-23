@@ -1,75 +1,74 @@
+/* @group Side-Ttabs */
 
-/* @group Sidetabs */
+aside.side-tabs{ 
+	@include grid-column(3);
+	@include box-sizing(border-box);
+	padding-right: 20px;
+	
+  h3{ padding-bottom: 10px; }
 
-.content-area .block { float: right; }
+  section{
+    
+    width: 100%;
+    padding-top: 15px;
+    margin-bottom: 30px;
+		border-top: 1px solid #DDDDDD;
+		ul{
+		  list-style: none;
+		  margin: 0px;
+		  padding: 0px;
+		  li{
+        margin-bottom: 10px;
+        
+        &.active{
+          a,
+          #inspect-select{
+            @include linear-gradient(#F8F8F8, #E8E8E8);
+            border: #ddd 1px solid;
+            color: #333333;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #FFFFFF;
+          }
+        }
+        
+        a{
+          @include border-radius(4px);
+          border: 1px solid transparent;
+          display: block;
+          font-size: 14px;
+          padding: 8px 10px 7px;
+          text-decoration: none;
+          color: #4183C4;
+          &:hover{
+            background: #f1f1f1;
+          }
+        }
+		  
+		    #inspect-select{
+          @include border-radius(4px);
+          width: 100%;
+          float: left;
+          padding: 0px;
+          select{
+            float: left;
+            display: block;
+            margin: 6px 20px 6px 10px;
+            font-size: 16px;	
+          }
 
-.sidetabs { 
-	min-height: 100%;
-	height:auto !important;
-	height: 100%;
-}
-	
-	.sidetabs .block-container { 
-		border: none; 
-		margin: 0px;
-	}
-		.sidetabs .block-content { padding: 0px 20px 20px 0px; }
-			.sidetabs h3 { padding-bottom: 10px; }
-
-			.sidetabs .actions,
-			.sidetabs ul {
-			    float: left;
-			    margin: 0px;
-			    width: 100%;
-			    list-style: none;
-			    padding-top: 15px;
-			    margin-bottom: 30px;
-	    		border-top: 1px solid #DDDDDD;
-			}
-				.sidetabs ul li {
-					margin-bottom: 10px;
-				}
-					.sidetabs ul li a {
-					    @include border-radius(4px);
-              border: 1px solid transparent;
-					    display: block;
-					    font-size: 14px;
-					    padding: 8px 10px 7px;
-					    text-decoration: none;
-					    color: #4183C4;
-					}
-						.sidetabs ul li a:hover,
-						.sidetabs ul li #inspect-select:hover {
-							background:#f1f1f1;
-						}
-					
-						.sidetabs ul li.active a,
-						.sidetabs ul li.active #inspect-select {
-					    @include linear-gradient(#F8F8F8, #E8E8E8);
-					    border: #ddd 1px solid;
-					    color: #333333;
-					    font-weight: bold;
-					    text-shadow: 1px 1px 0 #FFFFFF;
-						}
-				
-	
-			.sidetabs .actions a { 
-  			@include box-sizing(border-box);
-				margin: 0px 0px 10px 0px;
-				width: 100%;
-			}
-	
-	/* Select Inspect */ 
-	#inspect-select {
-    @include border-radius(4px);
-		width: 100%;
-		float: left;
-		padding: 0px;
-	}
-	
-		#inspect-select select {
-			float: left;
-			display: block;
-			margin: 6px 20px 6px 10px;
-			font-size: 16px;	
+		      &:hover{
+		        background: #f1f1f1;
+		      }  
+		    }
+		  }
 		}
+  
+    &.actions{
+      a{ 
+        @include box-sizing(border-box);
+        margin: 0px 0px 10px 0px;
+        width: 100%;
+      }
+    }
+  }
+}
