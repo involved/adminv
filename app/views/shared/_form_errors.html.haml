@@ -1,13 +1,19 @@
 - if self.methods.include?(:resource_class) && !resource_class.nil?
   - if resource.errors.any?
-    #errorExplanation
-      %h3= #"#{pluralize(resource.errors.count, "error")} prevented this from being saved:"
+    #error-explanation
+      %h4
+        = #"#{pluralize(resource.errors.count, "error")}
+        errors prevented this <br /> from being saved:
+      
+      = #"#{pluralize(resource.errors.count, "error")} prevented this from being saved:"
       %ul
         -# resource.errors.full_messages.each do |message|
           %li=# message
 - else
-  #errorExplanation
-    %h3= "99 errors prevented this from being saved:"
+  #error-explanation
+    %h4
+      = "99"
+      errors prevented this <br /> from being saved:
     %ul
       %li Name cannot be blank
       %li email is invalid
