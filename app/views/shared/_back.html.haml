@@ -1,4 +1,4 @@
-.block-head.grid_9
+.block-head
   - if self.methods.include?(:resource_class) && !resource_class.nil?
     = link_to "Back to #{resource_class.name.tableize.humanize.downcase} list", send(:"manage_#{resource_class.name.tableize}_path"), :class => :back
   - else

@@ -1,49 +1,62 @@
-.block { 
-  float: left;
-  @include grid-column(9);
-  
-  /* Types */
-	&.hint .block-container { background: #fbfde0; border-color: #eae8b6; }
-	&.tab-offset { margin-top: 40px; }
+/* Block Head */
+.block-head{
+	@include grid-column(9);
+	@include border-radius(3px);
+	@include box-sizing(border-box);
+	border: #DDD 1px solid;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	background: #fff;
 	
-  /* Block Head */
-  .block-head {
-		float: left;
-		border: #DDDDDD 1px solid;
-		padding: 10px 15px;
-		margin-bottom: 20px;
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		
-		a.back {
-			background: url("adminv/ui-icon_back-arrow.png") no-repeat scroll 0 50% transparent;
- 			padding-left: 12px;
- 			color: #4183C4;
-			text-decoration: none;
-			font-weight: bold;
-			font-size: 12px;
-			&:hover { text-decoration: underline; }
+	a.back{
+    background: url("adminv/ui-icon_back-arrow.png") no-repeat scroll 0 50% transparent;
+    padding-left: 12px;
+    color: #4183C4;
+    text-decoration: none;
+		font-weight: bold;
+		font-size: 12px;
+		&:hover{ 
+		  text-decoration: underline;
 		}
 	}
+}
+
+
+/* Block Title */
+.block-title{
+  @include grid-column(9);
+  @include box-sizing(border-box);
+  border: medium none;
+  float: left;
+  padding: 10px 15px;
+}
+
+
+/* Block */
+.block{ 
+  float: left;
+  @include grid-column(9);
+  background: #fff;
+  
+  /* Types */
+	&.hint .block-container{ background: #fbfde0; border-color: #eae8b6; }
+	&.tab-offset{ margin-top: 40px; }
 	
 	/* Block Tabs */
-	.block-tabs {
+	.block-tabs{
 		width: 100%;
 		float: left;
-		ul {
+		ul{
       list-style: none;
       float: left;
       display: block;
       border-right: 1px solid #CCC;
       margin: 0px 0px 1px 0px;	
       clear: both;
-      li {
+      li{
 				float: left;
 				display: block;
-				a {
+				a{
 					background: #FFFFFF;
 					border-top: #CCC 1px solid;
 					border-left: #CCC 1px solid;
@@ -52,7 +65,7 @@
 					padding: 10px 20px;
 					position: relative;
 				}
-				&.ui-tabs-selected a {
+				&.ui-tabs-selected a{
 					background: #F1F2F2;
 					display: block;
 					padding-bottom: 12px;
@@ -63,7 +76,7 @@
 
 
 	/* Block Container*/
-	.block-container {
+	.block-container{
 		width: 100%;
 		float: left;
 		margin-top: -2px;
@@ -71,44 +84,42 @@
 		border: 1px solid #CCC;
 	
   	/* Block Tab */
-  	.block-tab {
+  	.block-tab{
   		float: left;
   		display: block;
   	  width: 100%;
   	}
   		
     /* Block Header */
-		.block-header {		
+		.block-header{		
 			background: #F1F2F2;
 			border-bottom: 1px solid #CCC;
 			padding: 5px 20px;	
 			width: 100%;
 			float: left;
 			vertical-align: middle;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;	
+			@include box-sizing(border-box);
 		  
-		  h2, h3, h4 {
+		  h2, h3, h4{
 				float: left;
 				line-height: 30px;
 			}
 			
 			/* Block Description */
-			.block-description {
+			.block-description{
 				float: left;
 				display: block;
 			}
 			
 			/* Block Toggles */
-			.block-toggles {
+			.block-toggles{
 				display: block;
 				float: right;
 				list-style: none;
 				margin: 2px 0px;
-				li {
+				li{
 				  margin: 0px; 
-				  a {
+				  a{
 				    float: left;
 				  }
 				}
@@ -116,17 +127,15 @@
 		}
 
     /* Block Content */
-		.block-content {
+		.block-content{
 			width: 100%;
 			padding: 20px;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;			
+			@include box-sizing(border-box);			
 			float: left;
 		}
 	
     /* Block Controls */
-		.block-controls {
+		.block-controls{
 			width: 100%;
 			float: left;
 			background: #F1F2F2;
@@ -134,19 +143,19 @@
 			margin-top: 5px;
 			
 			/* Block Actions */
-			.block-actions {
+			.block-actions{
 				float: right;		   
 				padding: 10px 20px;
 				min-height: 25px;
 			}
 			
 			/* Block Pagination */
-			.block-pagination {
+			.block-pagination{
 				float: left;
-				ul {
+				ul{
 					list-style: none;
 					float: right;
-					li {
+					li{
 						float: left;
 						display: inline-block;
 						height: 100%;
@@ -159,7 +168,7 @@
               vertical-align: middle;
               line-height: 40px;
 						}
-						&.current span {
+						&.current span{
               background: #FFF;
               border-left: 1px solid #CCC;
               border-right: 1px solid #CCC;
@@ -172,16 +181,17 @@
   }
 }
 
+
 		
 				    
 //// Links
 /* Block */
 .block-tabs a,
 .block-pagination a,
-.block-pagination span { font-size: 12px; color: #959595; line-height: 16px; font-weight: bold; text-decoration: none; }
-.block-pagination span { color: #bfbfbf; }
-.block-pagination .current span { color: #959595; } 
+.block-pagination span{ font-size: 12px; color: #959595; line-height: 16px; font-weight: bold; text-decoration: none; }
+.block-pagination span{ color: #bfbfbf; }
+.block-pagination .current span{ color: #959595; } 
 .block-tabs ul li.ui-tabs-selected a,
 .block-tabs a:hover,
-.block-pagination li a:hover { color: #111; }
-.block-pagination li.current a:hover { color: #959595; }
+.block-pagination li a:hover{ color: #111; }
+.block-pagination li.current a:hover{ color: #959595; }

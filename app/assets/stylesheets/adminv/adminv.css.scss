@@ -11,8 +11,14 @@
 @import "base";
 
 html{
+  height: 100%;
   body{
-      
+    
+    display: table;
+    height: 100%;
+    width: 100%;
+    background: url("adminv/bg-tile_page.gif") repeat scroll 0 0;
+    
     @import "includes/header";
     @import "includes/sub-nav";
     @import "includes/sidetabs";
@@ -34,7 +40,7 @@ html{
 
 /* @group CSS3 Buttons Overrides */
 
-.button.icon-only { 
+.button.icon-only{ 
 	text-indent: -3000px;
 	padding: 0.5em 1.7em 0.5em 1.2em;
 }
@@ -67,21 +73,21 @@ html{
 
 
 /* Overview Lists */
-dl.overview { font-size: 17px; }
-dl.overview dt { font-weight: bold; }
+dl.overview{ font-size: 17px; }
+dl.overview dt{ font-weight: bold; }
 
-dl.overview { 
+dl.overview{ 
 	float: left;
 	display: block;
 }
 dl.overview dt,
-dl.overview dd {
+dl.overview dd{
 	display: inline-block;
 	float: left;
 	margin-bottom: 5px;
 }
 
-dl.overview dt { 
+dl.overview dt{ 
 	width: 170px;
 	clear: left; 
 }

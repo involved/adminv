@@ -1,9 +1,9 @@
 - button_action_name = controller.action_name == 'new' ? 'Create' : 'Update'
 
-.block.grid_3.actions
-  .block-container
+%aside
+  .actions
     = render :partial => 'shared/form_errors'#, :locals => {:resource => resource}
-    
+  
     - if self.methods.include?(:resource_class) && !resource_class.nil?
       - if resource_class && resource_class.instance_methods.include?('publish=') && resource && (resource.new_record? || resource.is_draft?)
         = primary_positive_big_button_submit_tag "Publish"
@@ -11,11 +11,10 @@
       - else
         = primary_big_positive_button_submit_tag "#{button_action_name} #{resource.class.name.tableize.singularize.humanize.downcase}"
       = negative_big_button_link_to "Cancel", session[:manage_return_to] || manage_root_path
-    
+  
     - else
       // Fallback for Static App
-      
+    
       = primary_positive_big_button_submit_tag "Publish"
       = big_button_submit_tag "Save draft"
       = negative_big_button_link_to "Cancel", session[:manage_return_to] || root_path
-    

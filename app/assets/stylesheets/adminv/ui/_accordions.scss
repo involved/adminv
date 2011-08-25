@@ -11,7 +11,7 @@
   }
   
   .row{
-    .details { 
+    .details{ 
       display: none; /* hide by default */
       
   		float: left;
@@ -27,7 +27,7 @@
   		
   		.table{
   		  float: none;
-        li {
+        li{
 				  float: none;
 				  display: table-row;
 				  label, 
@@ -44,12 +44,12 @@
   		}
   	}
   	
-  	select {
+  	select{
 			float: left;
 			display: inline-block;
 		}
   	
-  	&.expanded .col.edit { 
+  	&.expanded .col.edit{ 
   		opacity: 1;
   		filter: alpha(opacity=100);
   	}
