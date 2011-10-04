@@ -1,7 +1,8 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in adminv.gemspec
 gemspec
 
+gem 'jquery-rails'
+gem 'modernizr-rails'
+gem 'bourbon'
 gem 'css3buttons', '1.0.1'
-#gem 'bourbon'
