@@ -4,6 +4,7 @@
 #= require jquery-ui
 #= require jquery_ujs
 #= require modernizr
+#= require log
 #= require ./core
 
 # Allows function and object namespaces
