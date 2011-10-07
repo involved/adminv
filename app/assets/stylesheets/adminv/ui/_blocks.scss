@@ -144,39 +144,46 @@
 			
 			/* Block Actions */
 			.block-actions{
-				float: right;		   
-				padding: 10px 20px;
-				min-height: 25px;
+        list-style: none;        
+        float: left;		 
+        margin: 0px;  
+        padding: 10px 20px 5px 20px;
+        min-height: 25px;
 			}
 			
 			/* Block Pagination */
-			.block-pagination{
-				float: left;
-				ul{
-					list-style: none;
-					float: right;
-					li{
-						float: left;
-						display: inline-block;
-						height: 100%;
-						a, span{
+      .block-pagination{
+      	width: auto;
+      	float: right;
+      	display: block;	
+      
+      	ul{
+      		width: 100%;
+      		list-style: none;
+      		float: left;
+      		display: block;
+      	
+      		li{
+      			float: left;
+      			display: inline-block;
+      			a{
               background: #F1F2F2;
+              display: block;
               float: left;
-              padding: 0px 20px;
-              height: 100%;
+              padding: 12px 20px;
               position: relative;
-              vertical-align: middle;
-              line-height: 40px;
-						}
-						&.current span{
+              text-decoration: none;
+      			}
+      			a.active{
               background: #FFF;
               border-left: 1px solid #CCC;
               border-right: 1px solid #CCC;
               top: -1px;
-            }
-					}
-				}  
-			}	
+              height: 15px;
+      			}
+      		}
+        }
+      }	
     }
   }
 }
@@ -186,12 +193,5 @@
 				    
 //// Links
 /* Block */
-.block-tabs a,
-.block-pagination a,
-.block-pagination span{ font-size: 12px; color: #959595; line-height: 16px; font-weight: bold; text-decoration: none; }
-.block-pagination span{ color: #bfbfbf; }
-.block-pagination .current span{ color: #959595; } 
-.block-tabs ul li.ui-tabs-selected a,
-.block-tabs a:hover,
-.block-pagination li a:hover{ color: #111; }
-.block-pagination li.current a:hover{ color: #959595; }
+.block-tabs a { font-size: 12px; color: #959595; line-height: 16px; font-weight: bold; text-decoration: none; }
+

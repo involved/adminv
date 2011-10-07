@@ -6,18 +6,7 @@ class @Tables
     console.log("Tables.init [ done ]")
     true
 
-  constructor: ->
-    this.addTableIndexClasses()
-    this.enableSortableTableRows()
-
-  addTableIndexClasses: ->
-    self = this
-    $(".table").each (index, table) ->
-      $(this).addClass "table-#{index}"
-      self.addColumnIndexClasses(this)
-    true
-
-  addColumnIndexClasses: (table) ->
+  @addColumnIndexClasses: (table) ->
     maximumColumnWidths = [] # handle browsers that don't support table-cell
     $(".row", table).each (index) ->
       $(".col", this).each (index) ->
@@ -28,6 +17,17 @@ class @Tables
       $(".col-#{index}", table).width(maximumColumnWidths[index])
 
     $(table).addClass('initialized')
+    true
+
+  constructor: ->
+    this.addTableIndexClasses()
+    this.enableSortableTableRows()
+
+  addTableIndexClasses: ->
+    self = this
+    $(".table").each (index, table) ->
+      $(this).addClass "table-#{index}"
+      Tables.addColumnIndexClasses(this)
     true
 
   enableSortableTableRows: ->

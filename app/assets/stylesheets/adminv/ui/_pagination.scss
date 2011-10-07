@@ -1,0 +1,44 @@
+/* Block Pagination */
+.block-pagination{
+	width: 100%;
+	float: left;
+	display: block;	
+	background: #F1F2F2;
+  border-top: 1px solid #CCCCCC;
+  clear: both;
+  margin-top: 5px;
+
+	ul{
+		width: 100%;
+		list-style: none;
+		float: left;
+		display: block;
+	
+		li{
+			float: left;
+			display: inline-block;
+			a,
+			span{
+        background: #F1F2F2;
+        display: block;
+        float: left;
+        padding: 10px 20px;
+        position: relative;
+			}
+			a.active{
+        background: #FFF;
+        border-left: 1px solid #CCC;
+        border-right: 1px solid #CCC;
+        top: -1px;
+        height: 15px;
+			}
+		}
+  }
+}
+
+/*.block-pagination a,
+.block-pagination span{ font-size: 12px; color: #959595; line-height: 16px; font-weight: bold; text-decoration: none; }
+.block-pagination span{ color: #bfbfbf; }
+.block-pagination .current span{ color: #959595; } 
+.block-pagination li a:hover{ color: #111; }
+.block-pagination li.current a:hover{ color: #959595; }*/
