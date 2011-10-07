@@ -16,7 +16,7 @@
   %link{:rel => "image_src", :href => "/facebook-icon.png"}
 
   = stylesheet_link_tag 'adminv'
-  = render :partial => "shared/javascripts_header"
+  = javascript_include_tag 'adminv'
   
 %body{:id => content_for?(:body_id) ? yield(:body_id) : ""}
 
