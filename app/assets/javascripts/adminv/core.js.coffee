@@ -1,4 +1,5 @@
 #= require ./ui/core
+#= require ./ui/forms
 
 # class Rails
 # Adds some extra jQuery stuff that is otherwise absent (may not be required in 3.1)
@@ -29,7 +30,7 @@ class @Adminv
     Tables.init()
     Tabs.init()
     Accordions.init()
-    #Forms.init
+    Forms.init()
     this.updateBodyClass()
     true
 

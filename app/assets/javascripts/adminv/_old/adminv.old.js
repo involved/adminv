@@ -145,7 +145,7 @@ var Adminv = function() {
       items: ".row",
       handle: ".sort-handle",
       placeholder: "row ui-state-highlight",
-      start: function(event, ui) {      
+      start: function(event, ui) {
         // Add emtpy cells to placeholder row
         var col_count = $(this).find(".row:first").children(".col").length;
         var row_height = $(this).find(".row:first").height();

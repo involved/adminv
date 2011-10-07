@@ -8,6 +8,7 @@ class @Tables
 
   constructor: ->
     this.addTableIndexClasses()
+    this.enableSortableTableRows()
 
   addTableIndexClasses: ->
     self = this
@@ -27,6 +28,23 @@ class @Tables
       $(".col-#{index}", table).width(maximumColumnWidths[index])
 
     $(table).addClass('initialized')
+    true
+
+  enableSortableTableRows: ->
+    $('.table.sortable .row-group').sortable(
+      axis: 'y',
+      items: '.row',
+      handle: '.sort-handle',
+      placeholder: 'row ui-state-highlight',
+      start: (event, ui) ->
+        $('.actions', ui.helper).children().hide()
+        $(ui.placeholder).append($(ui.item).children().clone())
+        true
+      stop: (event, ui) ->
+        Forms.updateTableRowPositions(this)
+        $('.actions', ui.helper).children().show()
+        true
+    )
     true
 
 # class Tabs

@@ -88,14 +88,15 @@
   
     /* Table Sortable */		
 		&.sortable{
-		  .ui-state-highlight{ 
+		  .row.ui-state-highlight{ 
 				background: lightgoldenrodyellow !important;
 				border-top: #FFCA6F 1px solid;
 				border-bottom: #FFCA6F 1px solid;
-				float: left;
-				display: block;
-				height: 35px;
-				width: 100%;
+        height: 35px;
+        color: #FFCA6F;
+        .col.sort-handle{
+          background: none;
+        }
 			}
 			
       .row.ui-sortable-helper{
