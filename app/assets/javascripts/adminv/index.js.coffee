@@ -1,11 +1,12 @@
 # Adminv Javascript Manifest
 #= require_self
 #= require jquery
+#= require jquery-ui
 #= require jquery_ujs
 #= require modernizr
 #= require ./core
 
-# Allows function namespaces
+# Allows function and object namespaces
 root = exports ? this
 root.namespace = (target, name, block) ->
   [target, name, block] = [(if typeof exports isnt 'undefined' then exports else window), arguments...] if arguments.length < 3
