@@ -1,10 +1,10 @@
 /*
-	Name: Adminv
-	URL: https://github.com/jordan-lewis/adminv
-	Description: Simple and Clean HTML5 Rails-3 CMS Template.
-	Version: 0.1.0
-	Author: Jordan Lewis - https://github.com/jordan-lewis
-	Author: Nicholas Bruning - https://github.com/thetron
+  Name: Adminv
+  URL: https://github.com/jordan-lewis/adminv
+  Description: Simple and Clean HTML5 Rails-3 CMS Template.
+  Version: 0.1.0
+  Author: Jordan Lewis - https://github.com/jordan-lewis
+  Author: Nicholas Bruning - https://github.com/thetron
 */
 
 var Adminv = function() {
@@ -65,7 +65,7 @@ var Adminv = function() {
       var widest = Math.max.apply( null, arr );
       $(accordion).find(".col-"+colnum).width(widest);
     }
-    
+
     // Lock widths
     $(accordion).addClass('initialised')
   }
@@ -75,7 +75,7 @@ var Adminv = function() {
   function bindTabs(){
     $(".tabs .block-tabs").parent().tabs();
   }
-  
+
   function bindMarkdownEditor(){
     $("form textarea").not('.basic').markItUp(myMarkdownSettings);
   }
@@ -90,28 +90,14 @@ var Adminv = function() {
     });
   }
 
-  
   function bindAccordions() {
-    // Toggling
-    var stop = false;
-    $(".accordion .accordion-toggle").live('click', function(event) {
-      if (stop){
-        event.stopImmediatePropagation();
-        event.preventDefault();
-        stop = false;
-      }
-    });
-    
-    //$(".accordion-toggle").die("click");
-    $('.accordion-toggle').live('click', function() {
-      /*console.log("toggle accordion");*/
+    $('.accordion-toggle').live('click', function(event) {
+      event.preventDefault();
       $(this).toggleClass("active");
       $(this).closest(".row").toggleClass('expanded').find('.details').slideToggle(200);
-      return false;
-    }).next(".details").hide();
+    }).closest(".row").find(".details").hide();
   }
 
-  
   function handleAddRowLinks(){
     $(".add_row").click(function(e) {
       e.preventDefault();
