@@ -12,12 +12,11 @@ class @Tables
     $(".row", table).each (index) ->
       $(".col", this).each (index) ->
         maximumColumnWidths[index] = Math.max(maximumColumnWidths[index] || 0, $(this).width())
+        console.log("col width - " + maximumColumnWidths[index])
         $(this).addClass("col-#{index}")
 
     for index of maximumColumnWidths
       $(".col-#{index}", table).width(maximumColumnWidths[index])
-
-    
     true
 
   constructor: ->
