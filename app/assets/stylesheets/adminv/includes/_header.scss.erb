@@ -4,7 +4,7 @@ header{
     min-height: 60px;
     padding-top: 10px;
     display: block;
-  	background: #5D6868 url(adminv/header-bg.gif) repeat-x 0 bottom;
+  	background: #5D6868 url(<%= asset_path 'adminv/header-bg.gif' %>) repeat-x 0 bottom;
   	border-bottom: 1px solid #251F24;
     .container{
     	hgroup{
@@ -131,9 +131,9 @@ header{
               padding: 5px 15px;
               text-shadow: 0px 2px 3px #003f5a;
             }
-            &.account a{ background: url(adminv/ui-icon_account.png) no-repeat 8px center; padding-left: 27px; }
-            &.settings a{ background: url(adminv/ui-icon_settings.png) no-repeat 5px center; padding-left: 27px; }
-            &.logout a	{ background: url(adminv/ui-icon_logout.png) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; } 
+            &.account a{ background: url(<%= asset_path 'adminv/ui-icon_account.png' %>) no-repeat 8px center; padding-left: 27px; }
+            &.settings a{ background: url(<%= asset_path 'adminv/ui-icon_settings.png' %>) no-repeat 5px center; padding-left: 27px; }
+            &.logout a	{ background: url(<%= asset_path 'adminv/ui-icon_logout.png' %>) no-repeat 6px center; padding: 5px 25px 5px 3px; text-indent: -3000px; } 
           }
         }
       }

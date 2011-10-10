@@ -10,7 +10,7 @@ class @Tables
     maximumColumnWidths = [] # handle browsers that don't support table-cell
     $(".row", table).each (index) ->
       $(".col", this).each (index) ->
-        maximumColumnWidths[index] = Math.max(maximumColumnWidths[index] || 0, $(this).width())
+        maximumColumnWidths[index] = Math.floor(Math.max(maximumColumnWidths[index] || 0, $(this).width()))
         $(this).addClass("col-#{index}")
 
     for index of maximumColumnWidths
