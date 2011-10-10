@@ -25,26 +25,26 @@
       
  
 #flash-message{
-	background: #dbe3ff url(<%= asset_path 'adminv/ui-icon_information.png' %>) 7px 8px no-repeat;
+	background: #dbe3ff image-url('adminv/ui-icon_information.png') 7px 8px no-repeat;
 	border-color: #a2b4ee !important;
 	color: #585b66;
 }     
       
 #flash-message.warning{
-	background: #fffbcc url(<%= asset_path 'adminv/adminv/ui-icon_error.png' %>) 7px 8px no-repeat;
+	background: #fffbcc image-url('adminv/adminv/ui-icon_error.png') 7px 8px no-repeat;
 	border-color: #E6DB55 !important;
 	color: #666452;
 }
 
 
 #flash-message.notice{
-	background: #d5ffce url(<%= asset_path 'adminv/ui-icon_tick.png' %>) 7px 8px no-repeat;
+	background: #d5ffce image-url('adminv/ui-icon_tick.png') 7px 8px no-repeat;
 	border-color: #9adf8f !important;
 	color: #556652;
 }
 
 #flash-message.error{
-	background: #ffcece url(<%= asset_path 'adminv/ui-icon_exclamation.png' %>) 7px 8px no-repeat;
+	background: #ffcece image-url('adminv/ui-icon_exclamation.png') 7px 8px no-repeat;
 	border-color: #df8f8f !important;
 	color: #665252;
 }

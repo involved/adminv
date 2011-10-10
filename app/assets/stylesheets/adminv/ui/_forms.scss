@@ -89,7 +89,7 @@ form{
       min-width: 50px;
       padding: 15px 15px 10px 15px;
       margin-top: 50px; 
-      background: #fff url(<%= asset_path 'adminv/bg-tile_sidebar.gif' %>) repeat-y 0 0;
+      background: #fff image-url('adminv/bg-tile_sidebar.gif') repeat-y 0 0;
       border: #c9c9c9 1px solid;
       border-left: 0px;
 
