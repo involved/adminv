@@ -1,7 +1,10 @@
 /* Table Accordions */	
 
 .table.accordion{
+  display: none;
+
   &.initialized{
+    display: table;
     .col{ 
       float: left;
       &.actions{
@@ -13,7 +16,6 @@
   .row{
     .details{ 
       display: none; /* hide by default */
-      
   		float: left;
   		width: 100%;
   		padding: 10px 20px 10px 20px;
