@@ -16,8 +16,6 @@ class @Tables
 
     for index of maximumColumnWidths
       $(".col-#{index}", table).width(maximumColumnWidths[index])
-
-    
     true
 
   constructor: ->
