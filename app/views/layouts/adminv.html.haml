@@ -8,8 +8,11 @@
   = render :partial => 'adminv/meta'
   = csrf_meta_tag
   %title
-    = h(content_for?(:title) ? yield(:title) : "Welcome")
-    = ": Adminv CMS template"
+    - if content_for?(:title)
+      = "#{yield(:subtitle)} : ".html_safe if content_for?(:subtitle)
+      = yield(:title).html_safe
+    - else
+    = "Adminv CMS template"
 
   %link{:rel => "shortcut icon", :href => "/favicon.ico"}
   %link{:rel => "apple-touch-icon", :href => "/apple-touch-icon.png"}
