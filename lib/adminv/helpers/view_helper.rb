@@ -26,7 +26,7 @@ module Adminv
         render :partial => 'shared/back', :locals => {:namespace => options[:namespace], :alternative_resource_class => options[:alternative_resource_class]}
       end
 
-      def sidebar_right(namespace = nil)
+      def sidebar_right(options = {})
         render :partial => 'shared/sidebar_right', :locals => {:namespace => namespace}
       end
 
