@@ -12,7 +12,7 @@
       = "#{yield(:subtitle)} : ".html_safe if content_for?(:subtitle)
       = yield(:title).html_safe
     - else
-    = "Adminv CMS template"
+      = "Adminv CMS template"
 
   %link{:rel => "shortcut icon", :href => "/favicon.ico"}
   %link{:rel => "apple-touch-icon", :href => "/apple-touch-icon.png"}
