@@ -129,10 +129,11 @@
     /* Block Content */
 		.block-content{
 			width: 100%;
+			padding: 0px;
 			@include box-sizing(border-box);			
 			float: left;
 			.block-inner{
-        padding: 20px;
+		    padding: 20px;
 			}
 		}
 	
