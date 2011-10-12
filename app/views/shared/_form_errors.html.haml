@@ -2,13 +2,11 @@
   - if resource.errors.any?
     #error-explanation
       %h4
-        = #"#{pluralize(resource.errors.count, "error")}
-        errors prevented this <br /> from being saved:
-      
-      = #"#{pluralize(resource.errors.count, "error")} prevented this from being saved:"
+        = "#{pluralize(resource.errors.count, "error")} errors prevented this<br /> from being saved:".html_safe
+
       %ul
-        -# resource.errors.full_messages.each do |message|
-          %li=# message
+        - resource.errors.full_messages.each do |message|
+          %li= message
 - else
   #error-explanation
     %h4

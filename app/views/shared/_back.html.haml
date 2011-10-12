@@ -1,5 +1,5 @@
 .block-head
-  - if self.methods.include?(:resource_class) && !resource_class.nil?
-    = link_to "Back to #{resource_class.name.tableize.humanize.downcase} list", send(:"manage_#{resource_class.name.tableize}_path"), :class => :back
+  - if !alternative_resource_class.nil?
+    = link_to "Back to #{alternative_resource_class.name.tableize.humanize.downcase} list", send([namespace, alternative_resource_class.name.tableize].compact.join("_") + "_path"), :class => :back
   - else
     = link_to "Back", "javascript:histroy.back()", :class => :back

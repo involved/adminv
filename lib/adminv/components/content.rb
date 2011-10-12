@@ -6,7 +6,7 @@ module Adminv
 
       def initialize(template, *args)
         @template = template
-        @tab_id = ActiveSupport::SecureRandom.hex(4)
+        @tab_id = SecureRandom.hex(4)
         @options = args.extract_options!
         extract_html_options!
         @title = args.first.is_a?(Array) ? args.first.first : args.first

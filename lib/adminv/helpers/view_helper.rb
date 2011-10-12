@@ -6,7 +6,7 @@ module Adminv
         container.render(&block)
         container.to_s
       end
-      
+
       # sets the page title
       def title(page_title, page_subtitle = nil)
         content_for(:title) { page_title }
@@ -16,17 +16,18 @@ module Adminv
       def subtitle(page_title)
         content_for(:subtitle) {page_title}
       end
-      
+
       def page_id(new_id)
         content_for(:page_id){ new_id }
       end
 
-      def back_block
-        render :partial => 'shared/back'
+      def back_block(options = {})
+        options[:alternative_resource_class] = resource_class if options[:alternative_resource_class].blank?
+        render :partial => 'shared/back', :locals => {:namespace => options[:namespace], :alternative_resource_class => options[:alternative_resource_class]}
       end
 
-      def sidebar_right(resource = nil)
-        render :partial => 'shared/sidebar_right', :locals => {:resource_class => resource.class, :resource => resource}
+      def sidebar_right(options = {})
+        render :partial => 'shared/sidebar_right', :locals => {:namespace => options[:namespace]}
       end
 
       def empty_row(collection, name, &block)
