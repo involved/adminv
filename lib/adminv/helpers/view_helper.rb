@@ -27,7 +27,7 @@ module Adminv
       end
 
       def sidebar_right(options = {})
-        render :partial => 'shared/sidebar_right', :locals => {:namespace => namespace}
+        render :partial => 'shared/sidebar_right', :locals => {:namespace => options[:namespace]}
       end
 
       def empty_row(collection, name, &block)

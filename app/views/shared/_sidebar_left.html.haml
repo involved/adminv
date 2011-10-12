@@ -2,9 +2,9 @@
   %aside.side-tabs
     - if content_for? :subtitle
       %h3= yield :subtitle
-    
+
     %section
       = render :partial => 'adminv/side_tabs'
-    
+
     %section.actions
       = yield :sidebar_left
